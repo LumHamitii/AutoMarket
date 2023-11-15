@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lumha\\Desktop\\AutoMarket\\AutoMarket\\AutoMarket.csproj": {}
+    "D:\\Github-projects\\AutoMarket\\AutoMarket\\AutoMarket.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lumha\\Desktop\\AutoMarket\\AutoMarket\\AutoMarket.csproj": {
+    "D:\\Github-projects\\AutoMarket\\AutoMarket\\AutoMarket.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lumha\\Desktop\\AutoMarket\\AutoMarket\\AutoMarket.csproj",
+        "projectUniqueName": "D:\\Github-projects\\AutoMarket\\AutoMarket\\AutoMarket.csproj",
         "projectName": "AutoMarket",
-        "projectPath": "C:\\Users\\lumha\\Desktop\\AutoMarket\\AutoMarket\\AutoMarket.csproj",
-        "packagesPath": "C:\\Users\\lumha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lumha\\Desktop\\AutoMarket\\AutoMarket\\obj\\",
+        "projectPath": "D:\\Github-projects\\AutoMarket\\AutoMarket\\AutoMarket.csproj",
+        "packagesPath": "C:\\Users\\LED COM\\.nuget\\packages\\",
+        "outputPath": "D:\\Github-projects\\AutoMarket\\AutoMarket\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\lumha\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\LED COM\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -65,6 +60,10 @@
               "target": "Package",
               "version": "[6.0.23, )"
             },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[6.0.23, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -95,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -38,8 +38,6 @@ namespace AutoMarket.Models
         public string Description { get; set; }
 
         public string Location { get; set; }
-        public string UserId { get; set; }
-
-        public IdentityUser User { get; set; }
+        
     }
 }
