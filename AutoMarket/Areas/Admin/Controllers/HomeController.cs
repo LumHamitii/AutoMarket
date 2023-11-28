@@ -2,30 +2,31 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AutoMarket.Controllers
+namespace AutoMarket.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     [Authorize(Roles = "Admin")]
-    public class AdminController : Controller
+    public class HomeController : Controller
     {
-        // GET: AdminController
-        public ActionResult AdminDashboard()
+        // GET: HomeController
+        public ActionResult Index()
         {
             return View();
         }
 
-        // GET: AdminController/Details/5
+        // GET: HomeController/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: AdminController/Create
+        // GET: HomeController/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: AdminController/Create
+        // POST: HomeController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection)
@@ -40,13 +41,13 @@ namespace AutoMarket.Controllers
             }
         }
 
-        // GET: AdminController/Edit/5
+        // GET: HomeController/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: AdminController/Edit/5
+        // POST: HomeController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -61,13 +62,13 @@ namespace AutoMarket.Controllers
             }
         }
 
-        // GET: AdminController/Delete/5
+        // GET: HomeController/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: AdminController/Delete/5
+        // POST: HomeController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)

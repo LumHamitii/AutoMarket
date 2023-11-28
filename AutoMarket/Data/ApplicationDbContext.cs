@@ -12,15 +12,15 @@ namespace AutoMarket.Data
             : base(options)
         {
         }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        // base.OnModelCreating(modelBuilder);
 
-            // Define roles
-            modelBuilder.Entity<IdentityRole>().HasData(
-                new IdentityRole { Name = "User", NormalizedName = "USER" },
-                new IdentityRole { Name = "Admin", NormalizedName = "ADMIN" }
-            );
-        }
+        // Define roles
+        //  modelBuilder.Entity<IdentityRole>().HasData(
+        //   new IdentityRole { Name = "User", NormalizedName = "USER" },
+        //  new IdentityRole { Name = "Admin", NormalizedName = "ADMIN" }
+        // );
+        //  }
     }
 }
