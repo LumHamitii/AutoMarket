@@ -1,0 +1,81 @@
+﻿@model IEnumerable<AutoMarket.Models.Car>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstRegistration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnginePower)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            
+            
+            <th>
+                @Html.DisplayNameFor(model => model.CarBrand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarModel)
+            </th>
+           
+            
+            <th>
+                @Html.DisplayNameFor(model => model.CarFuelType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarMileage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarVersion)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstRegistration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnginePower)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarBrand.BrandName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarModel.ModelName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarFuelType.FuelType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarMileage.Mileage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarVersion.VersionType)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,8 +1,8 @@
 ﻿namespace AutoMarket.Models
 {
-    public class CarModel
+    public class CarBrand
     {
         public int Id { get; set; }
-        public string ModelName { get; set; }
+        public string BrandName { get; set; }
     }
 }

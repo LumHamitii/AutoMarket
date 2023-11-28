@@ -1,8 +1,8 @@
 ﻿namespace AutoMarket.Models
 {
-    public class CarModel
+    public class CarMileage
     {
         public int Id { get; set; }
-        public string ModelName { get; set; }
+        public string Mileage { get; set; }
     }
 }
