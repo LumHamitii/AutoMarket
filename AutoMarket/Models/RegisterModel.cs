@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿
+ using System.ComponentModel.DataAnnotations;
 
 namespace AutoMarket.Models
 {
@@ -18,3 +19,4 @@ namespace AutoMarket.Models
         public string ConfirmPassword { get; set; }
     }
 }
+

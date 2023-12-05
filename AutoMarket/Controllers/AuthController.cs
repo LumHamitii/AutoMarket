@@ -18,6 +18,7 @@ namespace AutoMarket.Controllers
             _userManager = userManager;
         }
 
+       
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterModel model)
         {
