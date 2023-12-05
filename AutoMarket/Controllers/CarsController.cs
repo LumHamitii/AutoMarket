@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using AutoMarket.Data;
 using AutoMarket.Models;
 using System.Runtime.ConstrainedExecution;
+using X.PagedList;
+using X.PagedList.Mvc;
 
 namespace AutoMarket.Controllers
 {
@@ -21,10 +23,25 @@ namespace AutoMarket.Controllers
         }
 
         // GET: Cars
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? page)
         {
-            var applicationDbContext = _context.Cars.Include(c => c.CarBrand).Include(c => c.CarColor).Include(c => c.CarCondition).Include(c => c.CarFuelType).Include(c => c.CarMileage).Include(c => c.CarModel).Include(c => c.CarSeats).Include(c => c.CarTransmissionType).Include(c => c.CarVersion);
-            return View(await applicationDbContext.ToListAsync());
+            var pageNumber = page ?? 1;
+            var pageSize = 4; // Set your desired page size here
+
+            var cars = await _context.Cars
+                .Include(c => c.CarBrand)
+                .Include(c => c.CarColor)
+                .Include(c => c.CarCondition)
+                .Include(c => c.CarFuelType)
+                .Include(c => c.CarMileage)
+                .Include(c => c.CarModel)
+                .Include(c => c.CarSeats)
+                .Include(c => c.CarTransmissionType)
+                .Include(c => c.CarVersion)
+                .ToPagedListAsync(pageNumber, pageSize);
+
+            return View(cars);
+
         }
 
         // GET: Cars/Details/5
