@@ -144,8 +144,7 @@ namespace AutoMarket.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
-            {
+            
                 try
                 {
                     _context.Update(car);
@@ -163,7 +162,7 @@ namespace AutoMarket.Controllers
                     }
                 }
                 return RedirectToAction(nameof(Index));
-            }
+            
             ViewData["CarBrandId"] = new SelectList(_context.Brands, "Id", "Id", car.CarBrandId);
             ViewData["CarColorId"] = new SelectList(_context.Colors, "Id", "Id", car.CarColorId);
             ViewData["CarConditionId"] = new SelectList(_context.Condition, "Id", "Id", car.CarConditionId);
