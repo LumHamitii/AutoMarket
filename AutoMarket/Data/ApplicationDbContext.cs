@@ -31,5 +31,6 @@ namespace AutoMarket.Data
         //  new IdentityRole { Name = "Admin", NormalizedName = "ADMIN" }
         // );
         //  }
+        
     }
 }

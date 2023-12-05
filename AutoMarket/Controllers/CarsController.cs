@@ -10,16 +10,20 @@ using AutoMarket.Models;
 using System.Runtime.ConstrainedExecution;
 using X.PagedList;
 using X.PagedList.Mvc;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AutoMarket.Controllers
 {
     public class CarsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public CarsController(ApplicationDbContext context)
+        public CarsController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: Cars
@@ -62,6 +66,7 @@ namespace AutoMarket.Controllers
                 .Include(c => c.CarSeats)
                 .Include(c => c.CarTransmissionType)
                 .Include(c => c.CarVersion)
+                .Include(c => c.User)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (car == null)
             {
@@ -70,7 +75,7 @@ namespace AutoMarket.Controllers
 
             return View(car);
         }
-
+        [Authorize]
         // GET: Cars/Create
         public IActionResult Create()
         {
@@ -93,7 +98,8 @@ namespace AutoMarket.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,FirstRegistration,EnginePower,Price,Features,Description,Location,CarBrandId,CarModelId,CarFuelTypeId,CarColorId,CarConditionId,CarMileageId,CarSeatsId,CarTransmissionTypeId,CarVersionId")] Car car)
         {
-            
+                var currentUser = await _userManager.GetUserAsync(User);
+                car.User = currentUser;
                 _context.Add(car);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

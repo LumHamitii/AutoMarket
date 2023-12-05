@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
+
 namespace AutoMarket.Models
 {
     public class Car
@@ -28,7 +29,9 @@ namespace AutoMarket.Models
         public int CarTransmissionTypeId { get; set; }
         public int CarVersionId { get; set; }
 
+       
 
+        public IdentityUser User { get; set; }
 
         public CarBrand CarBrand { get; set; }
         public CarModel CarModel { get; set; }
