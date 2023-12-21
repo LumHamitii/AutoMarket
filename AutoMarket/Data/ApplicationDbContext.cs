@@ -17,6 +17,16 @@ namespace AutoMarket.Data
         public DbSet<CarSeats> Seats { get; set; }
         public DbSet<CarTransmissionType> TransmissionTypes { get; set; }
         public DbSet<CarVersion> Versions { get; set; }
+        public DbSet<Motorcycle>Motorcycles { get; set; }
+        public DbSet<MotorcycleBrand> MotorcycleBrands { get; set; }
+        public DbSet<MotorcycleColor> MotorcycleColors { get; set; }
+        public DbSet<MotorcycleCondition> MotorcycleConditions { get; set; }
+        public DbSet<MotorcycleFuelType> MotorcycleFuelTypes { get; set; }
+        public DbSet<MotorcycleMileage> MotorcycleMileages { get; set; }
+        public DbSet<MotorcycleModel> MotorcycleModels { get; set; }
+        public DbSet<MotorcycleTransmission> MotorcycleTransmissions { get; set; }
+        public DbSet<MotorcycleType> MotorcycleTypes { get; set; }
+        public DbSet<MotorcycleYear> MotorcycleYears { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

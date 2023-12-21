@@ -1,0 +1,107 @@
+﻿@model IEnumerable<AutoMarket.Models.Motorcycle>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstRegistration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnginePower)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MotorcycleBrand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MotorcycleColor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MotorcycleCondition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MotorcycleFuelType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MotorcycleMileage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MotorcycleModel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MotorcycleTransmission)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MotorcycleType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MotorcycleYear)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstRegistration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnginePower)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MotorcycleBrand.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MotorcycleColor.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MotorcycleCondition.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MotorcycleFuelType.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MotorcycleMileage.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MotorcycleModel.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MotorcycleTransmission.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MotorcycleType.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MotorcycleYear.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
