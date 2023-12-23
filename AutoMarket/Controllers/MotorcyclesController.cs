@@ -93,22 +93,12 @@ namespace AutoMarket.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,FirstRegistration,EnginePower,Price,Description,MotorcycleBrandId,MotorcycleModelId,MotorcycleYearId,MotorcycleTypeId,MotorcycleColorId,MotorcycleMileageId,MotorcycleConditionId,MotorcycleTransmissionId,MotorcycleFuelTypeId")] Motorcycle motorcycle)
         {
-            if (ModelState.IsValid)
-            {
+            
                 _context.Add(motorcycle);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            }
-            ViewBag.MotorcycleBrandId = new SelectList(_context.MotorcycleBrands, "Id", "BrandName", motorcycle.MotorcycleBrandId);
-            ViewBag.MotorcycleColorId = new SelectList(_context.MotorcycleColors, "Id", "Color", motorcycle.MotorcycleColorId);
-            ViewBag.MotorcycleConditionId = new SelectList(_context.MotorcycleConditions, "Id", "Condition", motorcycle.MotorcycleConditionId);
-            ViewBag.MotorcycleFuelTypeId = new SelectList(_context.MotorcycleFuelTypes, "Id", "Fuel", motorcycle.MotorcycleFuelTypeId);
-            ViewBag.MotorcycleMileageId = new SelectList(_context.MotorcycleMileages, "Id", "Mileage", motorcycle.MotorcycleMileageId);
-            ViewBag.MotorcycleModelId = new SelectList(_context.MotorcycleModels, "Id", "ModelName", motorcycle.MotorcycleModelId);
-            ViewBag.MotorcycleTransmissionId = new SelectList(_context.MotorcycleTransmissions, "Id", "Transmission", motorcycle.MotorcycleTransmissionId);
-            ViewBag.MotorcycleTypeId = new SelectList(_context.MotorcycleTypes, "Id", "Type", motorcycle.MotorcycleTypeId);
-            ViewBag.MotorcycleYearId = new SelectList(_context.MotorcycleYears, "Id", "YearOfProduction", motorcycle.MotorcycleYearId);
-            return View(motorcycle);
+            
+            
         }
 
         // ... Other actions ...
