@@ -49,7 +49,64 @@ namespace AutoMarket.Controllers
 
             return car;
         }
+        [HttpGet("GetCarBrands")]
+        public async Task<ActionResult<IEnumerable<CarBrand>>> GetCarBrands()
+        {
+            var carBrands = await _context.Brands.ToListAsync();
+            return carBrands;
+        }
 
+        // GET: api/ApiCar/GetCarModels
+        [HttpGet("GetCarModels")]
+        public async Task<ActionResult<IEnumerable<CarModel>>> GetCarModels()
+        {
+            var carModels = await _context.Models.ToListAsync();
+            return carModels;
+        }
+
+        // GET: api/ApiCar/GetCarConditions
+        [HttpGet("GetCarConditions")]
+        public async Task<ActionResult<IEnumerable<CarCondition>>> GetCarConditions()
+        {
+            var carConditions = await _context.Condition.ToListAsync();
+            return carConditions;
+        }
+        [HttpGet("GetCarColors")]
+        public async Task<ActionResult<IEnumerable<CarColor>>> GetCarColors()
+        {
+            var carColors = await _context.Colors.ToListAsync();
+            return carColors;
+        }
+        [HttpGet("GetCarFuelTypes")]
+        public async Task<ActionResult<IEnumerable<CarFuelType>>> GetCarFuelTypes()
+        {
+            var carFuelTypes = await _context.FuelTypes.ToListAsync();
+            return carFuelTypes;
+        }
+        [HttpGet("GetCarMileages")]
+        public async Task<ActionResult<IEnumerable<CarMileage>>> GetCarMileages()
+        {
+            var carMileages = await _context.Mileages.ToListAsync();
+            return carMileages;
+        }
+        [HttpGet("GetCarSeats")]
+        public async Task<ActionResult<IEnumerable<CarSeats>>> GetCarSeats()
+        {
+            var carSeats = await _context.Seats.ToListAsync();
+            return carSeats;
+        }
+        [HttpGet("GetCarTransmissionTypes")]
+        public async Task<ActionResult<IEnumerable<CarTransmissionType>>> GetCarTransmissionTypes()
+        {
+            var carTransmissionTypes = await _context.TransmissionTypes.ToListAsync();
+            return carTransmissionTypes;
+        }
+        [HttpGet("GetCarVersions")]
+        public async Task<ActionResult<IEnumerable<CarVersion>>> GetCarVersions()
+        {
+            var carVersions = await _context.Versions.ToListAsync();
+            return carVersions;
+        }
         // PUT: api/ApiCar/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]

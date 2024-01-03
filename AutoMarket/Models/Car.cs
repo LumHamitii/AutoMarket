@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
-
+using System.Runtime.InteropServices;
 
 namespace AutoMarket.Models
 {
@@ -29,7 +29,6 @@ namespace AutoMarket.Models
         public int CarTransmissionTypeId { get; set; }
         public int CarVersionId { get; set; }
 
-       
 
         public IdentityUser User { get; set; }
 
