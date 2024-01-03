@@ -103,7 +103,7 @@ namespace AutoMarket.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Cars");
+                    b.ToTable("Cars", (string)null);
                 });
 
             modelBuilder.Entity("AutoMarket.Models.CarBrand", b =>
@@ -120,7 +120,7 @@ namespace AutoMarket.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Brands");
+                    b.ToTable("Brands", (string)null);
                 });
 
             modelBuilder.Entity("AutoMarket.Models.CarColor", b =>
@@ -137,7 +137,7 @@ namespace AutoMarket.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Colors");
+                    b.ToTable("Colors", (string)null);
                 });
 
             modelBuilder.Entity("AutoMarket.Models.CarCondition", b =>
@@ -154,7 +154,7 @@ namespace AutoMarket.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Condition");
+                    b.ToTable("Condition", (string)null);
                 });
 
             modelBuilder.Entity("AutoMarket.Models.CarFuelType", b =>
@@ -171,7 +171,7 @@ namespace AutoMarket.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("FuelTypes");
+                    b.ToTable("FuelTypes", (string)null);
                 });
 
             modelBuilder.Entity("AutoMarket.Models.CarMileage", b =>
@@ -188,7 +188,7 @@ namespace AutoMarket.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Mileages");
+                    b.ToTable("Mileages", (string)null);
                 });
 
             modelBuilder.Entity("AutoMarket.Models.CarModel", b =>
@@ -205,7 +205,7 @@ namespace AutoMarket.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Models");
+                    b.ToTable("Models", (string)null);
                 });
 
             modelBuilder.Entity("AutoMarket.Models.CarSeats", b =>
@@ -221,7 +221,7 @@ namespace AutoMarket.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Seats");
+                    b.ToTable("Seats", (string)null);
                 });
 
             modelBuilder.Entity("AutoMarket.Models.CarTransmissionType", b =>
@@ -238,7 +238,7 @@ namespace AutoMarket.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TransmissionTypes");
+                    b.ToTable("TransmissionTypes", (string)null);
                 });
 
             modelBuilder.Entity("AutoMarket.Models.CarVersion", b =>
@@ -255,7 +255,7 @@ namespace AutoMarket.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Versions");
+                    b.ToTable("Versions", (string)null);
                 });
 
             modelBuilder.Entity("AutoMarket.Models.Motorcycle", b =>
@@ -331,7 +331,7 @@ namespace AutoMarket.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Motorcycles");
+                    b.ToTable("Motorcycles", (string)null);
                 });
 
             modelBuilder.Entity("AutoMarket.Models.MotorcycleBrand", b =>
@@ -348,7 +348,7 @@ namespace AutoMarket.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("MotorcycleBrands");
+                    b.ToTable("MotorcycleBrands", (string)null);
                 });
 
             modelBuilder.Entity("AutoMarket.Models.MotorcycleColor", b =>
@@ -365,7 +365,7 @@ namespace AutoMarket.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("MotorcycleColors");
+                    b.ToTable("MotorcycleColors", (string)null);
                 });
 
             modelBuilder.Entity("AutoMarket.Models.MotorcycleCondition", b =>
@@ -382,7 +382,7 @@ namespace AutoMarket.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("MotorcycleConditions");
+                    b.ToTable("MotorcycleConditions", (string)null);
                 });
 
             modelBuilder.Entity("AutoMarket.Models.MotorcycleFuelType", b =>
@@ -399,7 +399,7 @@ namespace AutoMarket.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("MotorcycleFuelTypes");
+                    b.ToTable("MotorcycleFuelTypes", (string)null);
                 });
 
             modelBuilder.Entity("AutoMarket.Models.MotorcycleMileage", b =>
@@ -415,7 +415,7 @@ namespace AutoMarket.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("MotorcycleMileages");
+                    b.ToTable("MotorcycleMileages", (string)null);
                 });
 
             modelBuilder.Entity("AutoMarket.Models.MotorcycleModel", b =>
@@ -432,7 +432,7 @@ namespace AutoMarket.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("MotorcycleModels");
+                    b.ToTable("MotorcycleModels", (string)null);
                 });
 
             modelBuilder.Entity("AutoMarket.Models.MotorcycleTransmission", b =>
@@ -449,7 +449,7 @@ namespace AutoMarket.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("MotorcycleTransmissions");
+                    b.ToTable("MotorcycleTransmissions", (string)null);
                 });
 
             modelBuilder.Entity("AutoMarket.Models.MotorcycleType", b =>
@@ -466,7 +466,7 @@ namespace AutoMarket.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("MotorcycleTypes");
+                    b.ToTable("MotorcycleTypes", (string)null);
                 });
 
             modelBuilder.Entity("AutoMarket.Models.MotorcycleYear", b =>
@@ -482,7 +482,7 @@ namespace AutoMarket.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("MotorcycleYears");
+                    b.ToTable("MotorcycleYears", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
