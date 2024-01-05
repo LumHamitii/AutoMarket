@@ -109,6 +109,17 @@ namespace AutoMarket.Controllers
           {
               return NotFound();
           }
+            var cars = await _context.Cars
+                   .Include(c => c.CarBrand)
+                   .Include(c => c.CarColor)
+                   .Include(c => c.CarCondition)
+                   .Include(c => c.CarFuelType)
+                   .Include(c => c.CarMileage)
+                   .Include(c => c.CarModel)
+                   .Include(c => c.CarSeats)
+                   .Include(c => c.CarTransmissionType)
+                   .Include(c => c.CarVersion)
+           .ToListAsync();
             var car = await _context.Cars.FindAsync(id);
 
             if (car == null)
