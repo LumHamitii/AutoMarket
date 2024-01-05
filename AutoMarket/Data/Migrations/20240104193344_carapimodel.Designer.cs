@@ -4,6 +4,7 @@ using AutoMarket.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AutoMarket.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240104193344_carapimodel")]
+    partial class carapimodel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -104,6 +106,85 @@ namespace AutoMarket.Data.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Cars");
+                });
+
+            modelBuilder.Entity("AutoMarket.Models.carapi", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CarBrandId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CarColorId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CarConditionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CarFuelTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CarMileageId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CarModelId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CarSeatsId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CarTransmissionTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CarVersionId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EnginePower")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Features")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("FirstRegistration")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<float>("Price")
+                        .HasColumnType("real");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CarBrandId");
+
+                    b.HasIndex("CarColorId");
+
+                    b.HasIndex("CarConditionId");
+
+                    b.HasIndex("CarFuelTypeId");
+
+                    b.HasIndex("CarMileageId");
+
+                    b.HasIndex("CarModelId");
+
+                    b.HasIndex("CarSeatsId");
+
+                    b.HasIndex("CarTransmissionTypeId");
+
+                    b.HasIndex("CarVersionId");
+
+                    b.ToTable("carapis");
                 });
 
             modelBuilder.Entity("AutoMarket.Models.CarBrand", b =>
@@ -762,6 +843,81 @@ namespace AutoMarket.Data.Migrations
                     b.Navigation("CarVersion");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("AutoMarket.Models.carapi", b =>
+                {
+                    b.HasOne("AutoMarket.Models.CarBrand", "CarBrand")
+                        .WithMany()
+                        .HasForeignKey("CarBrandId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AutoMarket.Models.CarColor", "CarColor")
+                        .WithMany()
+                        .HasForeignKey("CarColorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AutoMarket.Models.CarCondition", "CarCondition")
+                        .WithMany()
+                        .HasForeignKey("CarConditionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AutoMarket.Models.CarFuelType", "CarFuelType")
+                        .WithMany()
+                        .HasForeignKey("CarFuelTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AutoMarket.Models.CarMileage", "CarMileage")
+                        .WithMany()
+                        .HasForeignKey("CarMileageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AutoMarket.Models.CarModel", "CarModel")
+                        .WithMany()
+                        .HasForeignKey("CarModelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AutoMarket.Models.CarSeats", "CarSeats")
+                        .WithMany()
+                        .HasForeignKey("CarSeatsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AutoMarket.Models.CarTransmissionType", "CarTransmissionType")
+                        .WithMany()
+                        .HasForeignKey("CarTransmissionTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AutoMarket.Models.CarVersion", "CarVersion")
+                        .WithMany()
+                        .HasForeignKey("CarVersionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CarBrand");
+
+                    b.Navigation("CarColor");
+
+                    b.Navigation("CarCondition");
+
+                    b.Navigation("CarFuelType");
+
+                    b.Navigation("CarMileage");
+
+                    b.Navigation("CarModel");
+
+                    b.Navigation("CarSeats");
+
+                    b.Navigation("CarTransmissionType");
+
+                    b.Navigation("CarVersion");
                 });
 
             modelBuilder.Entity("AutoMarket.Models.Motorcycle", b =>

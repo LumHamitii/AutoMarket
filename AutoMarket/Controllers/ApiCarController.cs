@@ -21,7 +21,7 @@ namespace AutoMarket.Controllers
             _context = context;
         }
 
-        // GET: api/ApiCar
+        // GET: api/ApiiCar
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Car>>> GetCars()
         {
@@ -30,36 +30,17 @@ namespace AutoMarket.Controllers
               return NotFound();
           }
             var cars = await _context.Cars
-                .Include(c => c.CarBrand)
-                .Include(c => c.CarColor)
-                .Include(c => c.CarCondition)
-                .Include(c => c.CarFuelType)
-                .Include(c => c.CarMileage)
-                .Include(c => c.CarModel)
-                .Include(c => c.CarSeats)
-                .Include(c => c.CarTransmissionType)
-                .Include(c => c.CarVersion)
-        .ToListAsync();
-
+                 .Include(c => c.CarBrand)
+                 .Include(c => c.CarColor)
+                 .Include(c => c.CarCondition)
+                 .Include(c => c.CarFuelType)
+                 .Include(c => c.CarMileage)
+                 .Include(c => c.CarModel)
+                 .Include(c => c.CarSeats)
+                 .Include(c => c.CarTransmissionType)
+                 .Include(c => c.CarVersion)
+         .ToListAsync();
             return await _context.Cars.ToListAsync();
-        }
-
-        // GET: api/ApiCar/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Car>> GetCar(int id)
-        {
-          if (_context.Cars == null)
-          {
-              return NotFound();
-          }
-            var car = await _context.Cars.FindAsync(id);
-
-            if (car == null)
-            {
-                return NotFound();
-            }
-
-            return car;
         }
         [HttpGet("GetCarBrands")]
         public async Task<ActionResult<IEnumerable<CarBrand>>> GetCarBrands()
@@ -119,7 +100,26 @@ namespace AutoMarket.Controllers
             var carVersions = await _context.Versions.ToListAsync();
             return carVersions;
         }
-        // PUT: api/ApiCar/5
+
+        // GET: api/ApiiCar/5
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Car>> GetCar(int id)
+        {
+          if (_context.Cars == null)
+          {
+              return NotFound();
+          }
+            var car = await _context.Cars.FindAsync(id);
+
+            if (car == null)
+            {
+                return NotFound();
+            }
+
+            return car;
+        }
+
+        // PUT: api/ApiiCar/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCar(int id, Car car)
@@ -150,22 +150,65 @@ namespace AutoMarket.Controllers
             return NoContent();
         }
 
-        // POST: api/ApiCar
+        // POST: api/ApiiCar
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Car>> PostCar(Car car)
+        public async Task<ActionResult<Car>> PostCar([FromBody] CarApiInputModel carApiInputModel)
         {
-          if (_context.Cars == null)
-          {
-              return Problem("Entity set 'ApplicationDbContext.Cars'  is null.");
-          }
-            _context.Cars.Add(car);
-            await _context.SaveChangesAsync();
+            try
+            {
+                // Map properties from input model to the carapi entity
+                var car = new Car
+                {
+                    FirstRegistration = carApiInputModel.FirstRegistration,
+                    EnginePower = carApiInputModel.EnginePower,
+                    Price = carApiInputModel.Price,
+                    Features = carApiInputModel.Features,
+                    Description = carApiInputModel.Description,
+                    Location = carApiInputModel.Location,
+                    CarBrandId = carApiInputModel.CarBrandId,
+                    CarModelId = carApiInputModel.CarModelId,
+                    CarFuelTypeId = carApiInputModel.CarFuelTypeId,
+                    CarColorId = carApiInputModel.CarColorId,
+                    CarConditionId = carApiInputModel.CarConditionId,
+                    CarMileageId = carApiInputModel.CarMileageId,
+                    CarSeatsId = carApiInputModel.CarSeatsId,
+                    CarTransmissionTypeId = carApiInputModel.CarTransmissionTypeId,
+                    CarVersionId = carApiInputModel.CarVersionId,
+                };
 
-            return CreatedAtAction("GetCar", new { id = car.Id }, car);
+                // Fetch related entities from the database based on IDs
+                car.CarBrand = await _context.Brands.FindAsync(car.CarBrandId);
+                car.CarModel = await _context.Models.FindAsync(car.CarModelId);
+                car.CarFuelType = await _context.FuelTypes.FindAsync(car.CarFuelTypeId);
+                car.CarColor = await _context.Colors.FindAsync(car.CarColorId);
+                car.CarCondition = await _context.Condition.FindAsync(car.CarConditionId);
+                car.CarMileage = await _context.Mileages.FindAsync(car.CarMileageId);
+                car.CarSeats = await _context.Seats.FindAsync(car.CarSeatsId);
+                car.CarTransmissionType = await _context.TransmissionTypes.FindAsync(car.CarTransmissionTypeId);
+                car.CarVersion = await _context.Versions.FindAsync(car.CarVersionId);
+
+                // Check if any of the entities is not found
+                if (car.CarBrand == null || car.CarModel == null || car.CarFuelType == null || car.CarColor == null ||
+                    car.CarCondition == null || car.CarMileage == null || car.CarSeats == null ||
+                    car.CarTransmissionType == null || car.CarVersion == null)
+                {
+                    return NotFound("One or more related entities not found.");
+                }
+
+                // Add and save the carapi
+                _context.Cars.Add(car);
+                await _context.SaveChangesAsync();
+
+                return CreatedAtAction("Getcar", new { id = car.Id }, car);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"An error occurred: {ex.Message}");
+            }
         }
 
-        // DELETE: api/ApiCar/5
+        // DELETE: api/ApiiCar/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCar(int id)
         {
