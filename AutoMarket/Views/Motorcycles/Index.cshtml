@@ -55,53 +55,54 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstRegistration)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EnginePower)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MotorcycleBrand.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MotorcycleColor.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MotorcycleCondition.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MotorcycleFuelType.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MotorcycleMileage.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MotorcycleModel.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MotorcycleTransmission.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MotorcycleType.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MotorcycleYear.Id)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstRegistration)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EnginePower)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MotorcycleBrand.BrandName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MotorcycleColor.Color)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MotorcycleCondition.Condition)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MotorcycleFuelType.Fuel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MotorcycleMileage.Mileage)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MotorcycleModel.ModelName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MotorcycleTransmission.Transmission)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MotorcycleType.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MotorcycleYear.YearOfProduction)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
