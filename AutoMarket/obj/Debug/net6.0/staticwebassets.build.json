@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zdPPm2oILHvyg5gv2x+8gsBxZM1VvnK8XS/lWRMXSeY=",
+  "Hash": "/OMUiEjZER08XNZnqHu3CH/f7Q9xI8EEquDfVPAuVtw=",
   "Source": "AutoMarket",
   "BasePath": "_content/AutoMarket",
   "Mode": "Default",
@@ -2089,6 +2089,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "D:\\Github-projects\\AutoMarket\\AutoMarket\\wwwroot\\uploads\\s.jpg",
+      "SourceId": "AutoMarket",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Github-projects\\AutoMarket\\AutoMarket\\wwwroot\\",
+      "BasePath": "_content/AutoMarket",
+      "RelativePath": "uploads/s.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\s.jpg"
     }
   ]
 }

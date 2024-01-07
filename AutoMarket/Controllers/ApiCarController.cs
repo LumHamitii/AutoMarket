@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AutoMarket.Data;
 using AutoMarket.Models;
+using System.Diagnostics;
 
 namespace AutoMarket.Controllers
 {
@@ -25,10 +26,10 @@ namespace AutoMarket.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Car>>> GetCars()
         {
-          if (_context.Cars == null)
-          {
-              return NotFound();
-          }
+            if (_context.Cars == null)
+            {
+                return NotFound();
+            }
             var cars = await _context.Cars
                  .Include(c => c.CarBrand)
                  .Include(c => c.CarColor)
@@ -39,6 +40,7 @@ namespace AutoMarket.Controllers
                  .Include(c => c.CarSeats)
                  .Include(c => c.CarTransmissionType)
                  .Include(c => c.CarVersion)
+                 .Include(c => c.Photos)
          .ToListAsync();
             return await _context.Cars.ToListAsync();
         }
@@ -105,10 +107,10 @@ namespace AutoMarket.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Car>> GetCar(int id)
         {
-          if (_context.Cars == null)
-          {
-              return NotFound();
-          }
+            if (_context.Cars == null)
+            {
+                return NotFound();
+            }
             var cars = await _context.Cars
                    .Include(c => c.CarBrand)
                    .Include(c => c.CarColor)
@@ -119,6 +121,7 @@ namespace AutoMarket.Controllers
                    .Include(c => c.CarSeats)
                    .Include(c => c.CarTransmissionType)
                    .Include(c => c.CarVersion)
+                   .Include(c => c.Photos)
            .ToListAsync();
             var car = await _context.Cars.FindAsync(id);
 
@@ -164,11 +167,12 @@ namespace AutoMarket.Controllers
         // POST: api/ApiiCar
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Car>> PostCar([FromBody] CarApiInputModel carApiInputModel)
+        public async Task<ActionResult<Car>> PostCar([FromForm] CarApiInputModel carApiInputModel)
         {
             try
             {
-                // Map properties from input model to the carapi entity
+                Debug.WriteLine($"Received request with {carApiInputModel.Files.Count} files.");
+                // Map properties from input model to the car entity
                 var car = new Car
                 {
                     FirstRegistration = carApiInputModel.FirstRegistration,
@@ -186,6 +190,7 @@ namespace AutoMarket.Controllers
                     CarSeatsId = carApiInputModel.CarSeatsId,
                     CarTransmissionTypeId = carApiInputModel.CarTransmissionTypeId,
                     CarVersionId = carApiInputModel.CarVersionId,
+                    Photos = new List<CarPhoto>()
                 };
 
                 // Fetch related entities from the database based on IDs
@@ -207,10 +212,33 @@ namespace AutoMarket.Controllers
                     return NotFound("One or more related entities not found.");
                 }
 
-                // Add and save the carapi
+                foreach (var file in carApiInputModel.Files)
+                {
+                    if (file.Length > 0)
+                    {
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            // Read the file content into a MemoryStream
+                            await file.CopyToAsync(ms);
+
+                            // Create a new CarPhoto entity for each file
+                            var carPhoto = new CarPhoto
+                            {
+                                PhotoData = ms.ToArray(),
+                                ContentType = file.ContentType
+                                // Set other properties as needed (e.g., caption, description, etc.)
+                            };
+
+                            // Associate the CarPhoto with the Car
+                            car.Photos.Add(carPhoto);
+                        }
+                    }
+                }
+
+                // Save the Car entity with the associated CarPhotos
                 _context.Cars.Add(car);
                 await _context.SaveChangesAsync();
-
+                Debug.WriteLine($"Created car with ID: {car.Id}");
                 return CreatedAtAction("Getcar", new { id = car.Id }, car);
             }
             catch (Exception ex)
@@ -218,6 +246,8 @@ namespace AutoMarket.Controllers
                 return BadRequest($"An error occurred: {ex.Message}");
             }
         }
+        
+
 
         // DELETE: api/ApiiCar/5
         [HttpDelete("{id}")]

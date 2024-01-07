@@ -17,5 +17,7 @@
         public int CarSeatsId { get; set; }
         public int CarTransmissionTypeId { get; set; }
         public int CarVersionId { get; set; }
+        public List<IFormFile> Files { get; set; }
+
     }
 }

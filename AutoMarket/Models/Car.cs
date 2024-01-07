@@ -40,7 +40,8 @@ namespace AutoMarket.Models
         public CarMileage CarMileage { get; set; }
         public CarSeats CarSeats { get; set; }
         public CarTransmissionType CarTransmissionType { get; set; }
-        public CarVersion CarVersion { get; set; }  
+        public CarVersion CarVersion { get; set; }
+        public List<CarPhoto> Photos { get; set; }
 
     }
 }
