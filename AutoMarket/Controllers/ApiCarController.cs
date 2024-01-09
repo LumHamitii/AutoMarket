@@ -132,6 +132,85 @@ namespace AutoMarket.Controllers
 
             return car;
         }
+        [HttpGet("filter")]
+        public async Task<ActionResult<IEnumerable<Car>>> FilterCars(
+    [FromQuery] int? brandId,
+    [FromQuery] int? modelId,
+    [FromQuery] int? fuelTypeId,
+    [FromQuery] int? colorId,
+    [FromQuery] int? conditionId,
+    [FromQuery] int? mileageId,
+    [FromQuery] int? seatsId,
+    [FromQuery] int? transmissionTypeId,
+    [FromQuery] int? versionId,
+    [FromQuery] DateTime? startDate,
+    [FromQuery] DateTime? endDate)
+
+        {
+            IQueryable<Car> query = _context.Cars
+                .Include(c => c.CarBrand)
+                .Include(c => c.CarModel)
+                .Include(c => c.CarFuelType)
+                .Include(c => c.CarColor)
+                .Include(c => c.CarCondition)
+                .Include(c => c.CarMileage)
+                .Include(c => c.CarSeats)
+                .Include(c => c.CarTransmissionType)
+                .Include(c => c.CarVersion)
+                .Include(c => c.Photos);
+
+            if (brandId.HasValue)
+            {
+                query = query.Where(c => c.CarBrandId == brandId.Value);
+            }
+
+            if (modelId.HasValue)
+            {
+                query = query.Where(c => c.CarModelId == modelId.Value);
+            }
+
+            if (fuelTypeId.HasValue)
+            {
+                query = query.Where(c => c.CarFuelTypeId == fuelTypeId.Value);
+            }
+
+            if (colorId.HasValue)
+            {
+                query = query.Where(c => c.CarColorId == colorId.Value);
+            }
+
+            if (conditionId.HasValue)
+            {
+                query = query.Where(c => c.CarConditionId == conditionId.Value);
+            }
+
+            if (mileageId.HasValue)
+            {
+                query = query.Where(c => c.CarMileageId == mileageId.Value);
+            }
+
+            if (seatsId.HasValue)
+            {
+                query = query.Where(c => c.CarSeatsId == seatsId.Value);
+            }
+
+            if (transmissionTypeId.HasValue)
+            {
+                query = query.Where(c => c.CarTransmissionTypeId == transmissionTypeId.Value);
+            }
+
+            if (versionId.HasValue)
+            {
+                query = query.Where(c => c.CarVersionId == versionId.Value);
+            }
+            if (startDate.HasValue && endDate.HasValue)
+            {
+                query = query.Where(c => c.FirstRegistration >= startDate.Value && c.FirstRegistration <= endDate.Value);
+            }
+            var filteredCars = await query.ToListAsync();
+
+            return Ok(filteredCars);
+        }
 
         // PUT: api/ApiiCar/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
