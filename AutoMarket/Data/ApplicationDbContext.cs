@@ -9,6 +9,7 @@ namespace AutoMarket.Data
     {
         public DbSet<Car> Cars { get; set; }
         public DbSet<CarPhoto> Photos { get; set; }
+        public DbSet<MotorcyclePhoto> MotorcyclePhotos { get; set; }
         public DbSet<CarBrand> Brands { get; set; }
         public DbSet<CarColor> Colors { get; set; }
         public DbSet<CarCondition> Condition { get; set; }

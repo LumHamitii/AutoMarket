@@ -4,6 +4,7 @@ using AutoMarket.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AutoMarket.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240110102855_motorcycleapifix")]
+    partial class motorcycleapifix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -911,7 +913,7 @@ namespace AutoMarket.Data.Migrations
             modelBuilder.Entity("AutoMarket.Models.MotorcyclePhoto", b =>
                 {
                     b.HasOne("AutoMarket.Models.Motorcycle", "Motorcycle")
-                        .WithMany("MotorcyclePhotos")
+                        .WithMany()
                         .HasForeignKey("MotorcycleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -973,11 +975,6 @@ namespace AutoMarket.Data.Migrations
             modelBuilder.Entity("AutoMarket.Models.Car", b =>
                 {
                     b.Navigation("Photos");
-                });
-
-            modelBuilder.Entity("AutoMarket.Models.Motorcycle", b =>
-                {
-                    b.Navigation("MotorcyclePhotos");
                 });
 #pragma warning restore 612, 618
         }

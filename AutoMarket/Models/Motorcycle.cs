@@ -45,6 +45,7 @@ namespace AutoMarket.Models
         public MotorcycleTransmission MotorcycleTransmission { get; set; }
         public MotorcycleType MotorcycleType { get; set; }
         public MotorcycleYear MotorcycleYear { get; set; }
+        public List<MotorcyclePhoto> MotorcyclePhotos { get; set; }
 
     }
 }
