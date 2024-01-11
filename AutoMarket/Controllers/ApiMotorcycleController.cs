@@ -41,9 +41,72 @@ namespace AutoMarket.Controllers
                 .Include(m => m.MotorcycleTransmission)
                 .Include(m => m.MotorcycleType)
                 .Include(m => m.MotorcycleYear)
+                .Include(m => m.MotorcyclePhotos)
                 .ToListAsync();
 
             return motorcycles;
+        }
+        [HttpGet("GetMotorcycleBrands")]
+        public async Task<ActionResult<IEnumerable<MotorcycleBrand>>> GetMotorcycleBrands()
+        {
+            var motorcycleBrands = await _context.MotorcycleBrands.ToListAsync();
+            return motorcycleBrands;
+        }
+
+        [HttpGet("GetMotorcycleModels")]
+        public async Task<ActionResult<IEnumerable<MotorcycleModel>>> GetMotorcycleModels()
+        {
+            var motorcycleModels = await _context.MotorcycleModels.ToListAsync();
+            return motorcycleModels;
+        }
+
+        [HttpGet("GetMotorcycleConditions")]
+        public async Task<ActionResult<IEnumerable<MotorcycleCondition>>> GetMotorcycleConditions()
+        {
+            var motorcycleConditions = await _context.MotorcycleConditions.ToListAsync();
+            return motorcycleConditions;
+        }
+
+        [HttpGet("GetMotorcycleColors")]
+        public async Task<ActionResult<IEnumerable<MotorcycleColor>>> GetMotorcycleColors()
+        {
+            var motorcycleColors = await _context.MotorcycleColors.ToListAsync();
+            return motorcycleColors;
+        }
+
+        [HttpGet("GetMotorcycleFuelTypes")]
+        public async Task<ActionResult<IEnumerable<MotorcycleFuelType>>> GetMotorcycleFuelTypes()
+        {
+            var motorcycleFuelTypes = await _context.MotorcycleFuelTypes.ToListAsync();
+            return motorcycleFuelTypes;
+        }
+
+        [HttpGet("GetMotorcycleMileages")]
+        public async Task<ActionResult<IEnumerable<MotorcycleMileage>>> GetMotorcycleMileages()
+        {
+            var motorcycleMileages = await _context.MotorcycleMileages.ToListAsync();
+            return motorcycleMileages;
+        }
+
+        [HttpGet("GetMotorcycleTransmissions")]
+        public async Task<ActionResult<IEnumerable<MotorcycleTransmission>>> GetMotorcycleTransmissions()
+        {
+            var motorcycleTransmissions = await _context.MotorcycleTransmissions.ToListAsync();
+            return motorcycleTransmissions;
+        }
+
+        [HttpGet("GetMotorcycleTypes")]
+        public async Task<ActionResult<IEnumerable<MotorcycleType>>> GetMotorcycleTypes()
+        {
+            var motorcycleTypes = await _context.MotorcycleTypes.ToListAsync();
+            return motorcycleTypes;
+        }
+
+        [HttpGet("GetMotorcycleYears")]
+        public async Task<ActionResult<IEnumerable<MotorcycleYear>>> GetMotorcycleYears()
+        {
+            var motorcycleYears = await _context.MotorcycleYears.ToListAsync();
+            return motorcycleYears;
         }
 
         [HttpGet("{id}")]
@@ -64,6 +127,7 @@ namespace AutoMarket.Controllers
                 .Include(m => m.MotorcycleTransmission)
                 .Include(m => m.MotorcycleType)
                 .Include(m => m.MotorcycleYear)
+                .Include(m => m.MotorcyclePhotos)
                 .FirstOrDefaultAsync(m => m.Id == id);
 
             if (motorcycle == null)
@@ -157,7 +221,7 @@ namespace AutoMarket.Controllers
                             {
                                 PhotoData = ms.ToArray(),
                                 ContentType = file.ContentType
-                                // Set other properties as needed (e.g., caption, description, etc.)
+                                // Set other properties as needed
                             };
 
                             motorcycle.MotorcyclePhotos.Add(motorcyclePhoto);
