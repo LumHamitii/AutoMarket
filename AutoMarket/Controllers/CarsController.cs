@@ -42,6 +42,7 @@ namespace AutoMarket.Controllers
                 .Include(c => c.CarSeats)
                 .Include(c => c.CarTransmissionType)
                 .Include(c => c.CarVersion)
+                .Include(c => c.Photos)
                 .ToPagedListAsync(pageNumber, pageSize);
 
             return View(cars);
@@ -57,6 +58,7 @@ namespace AutoMarket.Controllers
             }
 
             var car = await _context.Cars
+                .Include(c => c.Photos)
                 .Include(c => c.CarBrand)
                 .Include(c => c.CarColor)
                 .Include(c => c.CarCondition)
@@ -96,11 +98,28 @@ namespace AutoMarket.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FirstRegistration,EnginePower,Price,Features,Description,Location,CarBrandId,CarModelId,CarFuelTypeId,CarColorId,CarConditionId,CarMileageId,CarSeatsId,CarTransmissionTypeId,CarVersionId")] Car car)
+        public async Task<IActionResult> Create([Bind("Id,FirstRegistration,EnginePower,Price,Features,Description,Location,CarBrandId,CarModelId,CarFuelTypeId,CarColorId,CarConditionId,CarMileageId,CarSeatsId,CarTransmissionTypeId,CarVersionId")] Car car, List<IFormFile> photos)
         {
                 var currentUser = await _userManager.GetUserAsync(User);
                 car.User = currentUser;
-                _context.Add(car);
+            if (photos != null && photos.Count > 0)
+            {
+                car.Photos = new List<CarPhoto>();
+
+                foreach (var photo in photos)
+                {
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        await photo.CopyToAsync(memoryStream);
+                        car.Photos.Add(new CarPhoto
+                        {
+                            PhotoData = memoryStream.ToArray(),
+                            ContentType = photo.ContentType
+                        });
+                    }
+                }
+            }
+            _context.Add(car);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
            

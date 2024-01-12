@@ -10,7 +10,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Create" method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="FirstRegistration" class="control-label"></label>
@@ -77,6 +77,10 @@
             <div class="form-group">
                 <label asp-for="CarVersionId" class="control-label"></label>
                 <select asp-for="CarVersionId" class ="form-control" asp-items="ViewBag.CarVersionId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Photos" class="control-label"></label>
+                <input type="file" name="photos" multiple class="form-control" />
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

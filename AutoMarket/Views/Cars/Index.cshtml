@@ -42,6 +42,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.CarVersion)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Photos)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -72,6 +75,16 @@
             <td>
                 @Html.DisplayFor(modelItem => item.CarVersion.VersionType)
             </td>
+            <td>
+                    @if (item.Photos != null && item.Photos.Any())
+                    {
+                        <img src="data:image/jpeg;base64,@Convert.ToBase64String(item.Photos.First().PhotoData)" alt="Car Photo" style="max-width: 100px; max-height: 100px;" />
+                    }
+                    else
+                    {
+                        <span>No Photo</span>
+                    }
+                </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
