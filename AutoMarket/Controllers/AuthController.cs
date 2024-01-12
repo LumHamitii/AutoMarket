@@ -18,7 +18,6 @@ namespace AutoMarket.Controllers
             _userManager = userManager;
         }
 
-       
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterModel model)
         {
@@ -30,7 +29,7 @@ namespace AutoMarket.Controllers
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    return Ok(new { message = "Registration successful" });
+                    return Ok(new { message = "Registration successful", userId = user.Id });
                 }
 
                 return BadRequest(new { error = "Registration failed", details = result.Errors });
@@ -48,7 +47,10 @@ namespace AutoMarket.Controllers
 
                 if (result.Succeeded)
                 {
-                    return Ok(new { message = "Login successful" });
+                    var user = await _userManager.FindByEmailAsync(model.Email);
+
+                    // Return additional user details along with the login message
+                    return Ok(new { message = "Login successful", userId = user.Id });
                 }
                 else if (result.RequiresTwoFactor)
                 {

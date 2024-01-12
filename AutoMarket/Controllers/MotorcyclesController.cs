@@ -93,7 +93,8 @@ namespace AutoMarket.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,FirstRegistration,EnginePower,Price,Description,MotorcycleBrandId,MotorcycleModelId,MotorcycleYearId,MotorcycleTypeId,MotorcycleColorId,MotorcycleMileageId,MotorcycleConditionId,MotorcycleTransmissionId,MotorcycleFuelTypeId")] Motorcycle motorcycle)
         {
-
+            var currentUser = await _userManager.GetUserAsync(User);
+            motorcycle.User = currentUser;
             _context.Add(motorcycle);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
@@ -157,7 +158,7 @@ namespace AutoMarket.Controllers
 
             return RedirectToAction(nameof(Index));
         }
-      
+
         private bool MotorcycleExists(int id)
         {
             return (_context.Motorcycles?.Any(e => e.Id == id)).GetValueOrDefault();
