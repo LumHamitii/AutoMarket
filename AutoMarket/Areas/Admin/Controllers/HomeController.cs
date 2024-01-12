@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AutoMarket.Areas.Admin.Controllers
@@ -8,79 +9,47 @@ namespace AutoMarket.Areas.Admin.Controllers
     [Authorize(Roles = "Admin")]
     public class HomeController : Controller
     {
-        // GET: HomeController
-        public ActionResult Index()
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
+
+        public HomeController(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
         {
-            return View();
+            _userManager = userManager;
+            _roleManager = roleManager;
         }
 
-        // GET: HomeController/Details/5
-        public ActionResult Details(int id)
+        public IActionResult Index()
         {
-            return View();
+            var users = _userManager.Users;
+            ViewBag.UserManager = _userManager;
+            return View(users);
         }
 
-        // GET: HomeController/Create
-        public ActionResult Create()
+        // Action to change user role
+        public async Task<IActionResult> ChangeUserRole(string userId, string newRole)
         {
-            return View();
-        }
+            var user = await _userManager.FindByIdAsync(userId);
 
-        // POST: HomeController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
+            if (user == null)
             {
-                return RedirectToAction(nameof(Index));
+                return NotFound();
             }
-            catch
-            {
-                return View();
-            }
-        }
 
-        // GET: HomeController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
+            var roles = await _userManager.GetRolesAsync(user);
+            await _userManager.RemoveFromRolesAsync(user, roles.ToArray());
 
-        // POST: HomeController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
+            // Ensure the new role exists
+            if (!await _roleManager.RoleExistsAsync(newRole))
             {
-                return RedirectToAction(nameof(Index));
+                // Create the new role if it doesn't exist
+                await _roleManager.CreateAsync(new IdentityRole(newRole));
             }
-            catch
-            {
-                return View();
-            }
-        }
 
-        // GET: HomeController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
+            // Add the user to the new role
+            await _userManager.AddToRoleAsync(user, newRole);
 
-        // POST: HomeController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction(nameof(Index));
         }
     }
+  
 }

@@ -11882,19 +11882,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lumha\\.nuget\\packages\\": {}
+    "C:\\Users\\LED COM\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lumha\\Desktop\\AutoMarket\\AutoMarket\\AutoMarket.csproj",
+      "projectUniqueName": "D:\\Github-projects\\AutoMarket\\AutoMarket\\AutoMarket\\AutoMarket.csproj",
       "projectName": "AutoMarket",
-      "projectPath": "C:\\Users\\lumha\\Desktop\\AutoMarket\\AutoMarket\\AutoMarket.csproj",
-      "packagesPath": "C:\\Users\\lumha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lumha\\Desktop\\AutoMarket\\AutoMarket\\obj\\",
+      "projectPath": "D:\\Github-projects\\AutoMarket\\AutoMarket\\AutoMarket\\AutoMarket.csproj",
+      "packagesPath": "C:\\Users\\LED COM\\.nuget\\packages\\",
+      "outputPath": "D:\\Github-projects\\AutoMarket\\AutoMarket\\AutoMarket\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\lumha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\LED COM\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11986,7 +11986,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

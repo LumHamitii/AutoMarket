@@ -1,8 +1,50 @@
-﻿
+﻿@using Microsoft.AspNetCore.Identity;
+
+
+@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityUser>
 @{
-    ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>Index</h1>
+<h1>Admin - All Users</h1>
 
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                User Id
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Roles
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>
+                    @user.Id
+                </td>
+                <td>
+                    @user.Email
+                </td>
+                <td>
+                    @string.Join(", ", await ((UserManager<IdentityUser>)ViewBag.UserManager).GetRolesAsync(user))
+                </td>
+                <td>
+                    <a asp-action="ChangeUserRole" asp-controller="Home" asp-route-userId="@user.Id" asp-route-newRole="Admin">Make Admin</a>
+                </td>
+                <td>
+                    <a asp-action="ChangeUserRole" asp-controller="Home" asp-route-userId="@user.Id" asp-route-newRole="User">Remove Admin</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
