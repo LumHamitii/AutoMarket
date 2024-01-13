@@ -12,6 +12,8 @@ using X.PagedList;
 using X.PagedList.Mvc;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
+using AutoMarket.Authorization;
 
 namespace AutoMarket.Controllers
 {
@@ -19,6 +21,8 @@ namespace AutoMarket.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<IdentityUser> _userManager;
+
+
 
         public CarsController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
         {
@@ -43,6 +47,7 @@ namespace AutoMarket.Controllers
                 .Include(c => c.CarTransmissionType)
                 .Include(c => c.CarVersion)
                 .Include(c => c.Photos)
+                .Include(c => c.User)
                 .ToPagedListAsync(pageNumber, pageSize);
 
             return View(cars);
@@ -70,6 +75,11 @@ namespace AutoMarket.Controllers
                 .Include(c => c.CarVersion)
                 .Include(c => c.User)
                 .FirstOrDefaultAsync(m => m.Id == id);
+            if (car != null && car.User != null)
+            {
+                var userId = car.User.Id;
+                // Now, userId contains the user ID associated with the car.
+            }
             if (car == null)
             {
                 return NotFound();
@@ -102,6 +112,7 @@ namespace AutoMarket.Controllers
         {
                 var currentUser = await _userManager.GetUserAsync(User);
                 car.User = currentUser;
+
             if (photos != null && photos.Count > 0)
             {
                 car.Photos = new List<CarPhoto>();
@@ -182,18 +193,7 @@ namespace AutoMarket.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             
-            ViewData["CarBrandId"] = new SelectList(_context.Brands, "Id", "Id", car.CarBrandId);
-            ViewData["CarColorId"] = new SelectList(_context.Colors, "Id", "Id", car.CarColorId);
-            ViewData["CarConditionId"] = new SelectList(_context.Condition, "Id", "Id", car.CarConditionId);
-            ViewData["CarFuelTypeId"] = new SelectList(_context.FuelTypes, "Id", "Id", car.CarFuelTypeId);
-            ViewData["CarMileageId"] = new SelectList(_context.Mileages, "Id", "Id", car.CarMileageId);
-            ViewData["CarModelId"] = new SelectList(_context.Models, "Id", "Id", car.CarModelId);
-            ViewData["CarSeatsId"] = new SelectList(_context.Seats, "Id", "Id", car.CarSeatsId);
-            ViewData["CarTransmissionTypeId"] = new SelectList(_context.TransmissionTypes, "Id", "Id", car.CarTransmissionTypeId);
-            ViewData["CarVersionId"] = new SelectList(_context.Versions, "Id", "Id", car.CarVersionId);
-            return View(car);
         }
-
         // GET: Cars/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -212,14 +212,17 @@ namespace AutoMarket.Controllers
                 .Include(c => c.CarSeats)
                 .Include(c => c.CarTransmissionType)
                 .Include(c => c.CarVersion)
+                .Include(c => c.User)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (car == null)
             {
                 return NotFound();
             }
+            
 
             return View(car);
         }
+
 
         // POST: Cars/Delete/5
         [HttpPost, ActionName("Delete")]

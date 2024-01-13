@@ -1,4 +1,6 @@
-﻿@using X.PagedList;
+﻿@using System.Security.Claims;
+@inject Microsoft.AspNetCore.Authorization.IAuthorizationService AuthorizationService
+@using X.PagedList;
 @using X.PagedList.Mvc.Core;
 @model IEnumerable<AutoMarket.Models.Car>
 @{
@@ -86,9 +88,29 @@
                     }
                 </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    @{
+
+                        var canEdit = (await AuthorizationService.AuthorizeAsync(User, item, "ListingOwnerPolicy")).Succeeded;
+                        var isAdmin = User.IsInRole("Admin");
+
+                        if (canEdit || isAdmin)
+                        {
+                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                        }
+                    }
+                    |
+                    @{
+
+                        var canDelete = (await AuthorizationService.AuthorizeAsync(User, item, "ListingOwnerPolicy")).Succeeded;
+                        var isAdminn = User.IsInRole("Admin");
+
+                        if (canDelete || isAdminn)
+                        {
+                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        }
+                    }
+
             </td>
         </tr>
 }

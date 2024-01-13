@@ -7,6 +7,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
+using AutoMarket.Authorization;
+using Microsoft.AspNetCore.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +22,17 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders()
     .AddDefaultUI();
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("ListingOwnerPolicy", policy =>
+    {
+        policy.Requirements.Add(new ListingOwnerRequirement());
+    });
+});
+
+builder.Services.AddSingleton<IAuthorizationHandler, ListingOwnerAuthorizationHandler>();
+
 
 builder.Services.AddCors(options =>
 {
@@ -58,6 +71,8 @@ app.UseCors("ReactPolicy");
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+builder.Logging.AddConsole();
 
 app.UseEndpoints(endpoints =>
 {
