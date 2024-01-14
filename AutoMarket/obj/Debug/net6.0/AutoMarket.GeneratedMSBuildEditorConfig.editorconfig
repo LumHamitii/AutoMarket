@@ -102,6 +102,86 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleBrands/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZUJyYW5kc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleBrands/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZUJyYW5kc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleBrands/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZUJyYW5kc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleBrands/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZUJyYW5kc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleBrands/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZUJyYW5kc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleColors/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZUNvbG9yc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleColors/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZUNvbG9yc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleColors/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZUNvbG9yc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleColors/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZUNvbG9yc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleColors/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZUNvbG9yc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleConditions/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZUNvbmRpdGlvbnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleConditions/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZUNvbmRpdGlvbnNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleConditions/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZUNvbmRpdGlvbnNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleConditions/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZUNvbmRpdGlvbnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleConditions/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZUNvbmRpdGlvbnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleModels/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZU1vZGVsc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleModels/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZU1vZGVsc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleModels/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZU1vZGVsc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleModels/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZU1vZGVsc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleModels/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZU1vZGVsc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
