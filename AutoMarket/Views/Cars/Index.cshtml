@@ -103,9 +103,8 @@
                     @{
 
                         var canDelete = (await AuthorizationService.AuthorizeAsync(User, item, "ListingOwnerPolicy")).Succeeded;
-                        var isAdminn = User.IsInRole("Admin");
 
-                        if (canDelete || isAdminn)
+                        if (canDelete)
                         {
                             <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                         }

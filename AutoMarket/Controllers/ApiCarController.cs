@@ -122,6 +122,7 @@ namespace AutoMarket.Controllers
                    .Include(c => c.CarTransmissionType)
                    .Include(c => c.CarVersion)
                    .Include(c => c.Photos)
+                   .Include(c => c.User)
            .ToListAsync();
             var car = await _context.Cars.FindAsync(id);
 
@@ -269,7 +270,8 @@ namespace AutoMarket.Controllers
                     CarSeatsId = carApiInputModel.CarSeatsId,
                     CarTransmissionTypeId = carApiInputModel.CarTransmissionTypeId,
                     CarVersionId = carApiInputModel.CarVersionId,
-                    Photos = new List<CarPhoto>()
+                    Photos = new List<CarPhoto>(),
+                    UserId = carApiInputModel.UserId
                 };
 
                 // Fetch related entities from the database based on IDs
