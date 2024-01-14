@@ -2,6 +2,8 @@
 {
     public class MotorcycleApiInputModel
     {
+        public string UserId { get; set; }
+
         public DateTime FirstRegistration { get; set; }
 
         public int EnginePower { get; set; }

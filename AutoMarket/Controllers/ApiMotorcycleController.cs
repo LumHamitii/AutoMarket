@@ -128,6 +128,7 @@ namespace AutoMarket.Controllers
                 .Include(m => m.MotorcycleType)
                 .Include(m => m.MotorcycleYear)
                 .Include(m => m.MotorcyclePhotos)
+                .Include(m => m.User)
                 .FirstOrDefaultAsync(m => m.Id == id);
 
             if (motorcycle == null)
@@ -189,7 +190,8 @@ namespace AutoMarket.Controllers
                     MotorcycleTransmissionId = motorcycleApiInputModel.MotorcycleTransmissionId,
                     MotorcycleTypeId = motorcycleApiInputModel.MotorcycleTypeId,
                     MotorcycleYearId = motorcycleApiInputModel.MotorcycleYearId,
-                    MotorcyclePhotos = new List<MotorcyclePhoto>()
+                    MotorcyclePhotos = new List<MotorcyclePhoto>(),
+                    UserId = motorcycleApiInputModel.UserId
                 };
 
                 motorcycle.MotorcycleBrand = await _context.MotorcycleBrands.FindAsync(motorcycle.MotorcycleBrandId);
