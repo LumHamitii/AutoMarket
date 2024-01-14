@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using AutoMarket.Models; // Replace with the actual namespace of your view models
+using AutoMarket.Models; 
 
 namespace AutoMarket.Controllers
 {
@@ -16,26 +16,6 @@ namespace AutoMarket.Controllers
         {
             _signInManager = signInManager;
             _userManager = userManager;
-        }
-
-        [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] RegisterModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                var user = new IdentityUser { UserName = model.Email, Email = model.Email };
-                var result = await _userManager.CreateAsync(user, model.Password);
-
-                if (result.Succeeded)
-                {
-                    await _signInManager.SignInAsync(user, isPersistent: false);
-                    return Ok(new { message = "Registration successful", userId = user.Id });
-                }
-
-                return BadRequest(new { error = "Registration failed", details = result.Errors });
-            }
-
-            return BadRequest(new { error = "Invalid registration data" });
         }
 
         [HttpPost("login")]
