@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
 using AutoMarket.Authorization;
+using AutoMarket.ViewModel;
 
 namespace AutoMarket.Controllers
 {
@@ -242,7 +243,101 @@ namespace AutoMarket.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+        public async Task<IActionResult> FilterCars(
+        [FromQuery] int? brandId,
+        [FromQuery] int? modelId,
+        [FromQuery] int? fuelTypeId,
+        [FromQuery] int? colorId,
+        [FromQuery] int? conditionId,
+        [FromQuery] int? mileageId,
+        [FromQuery] int? seatsId,
+        [FromQuery] int? transmissionTypeId,
+        [FromQuery] int? versionId,
+        [FromQuery] DateTime? startDate,
+        [FromQuery] DateTime? endDate)
 
+        {
+            IQueryable<Car> query = _context.Cars
+                .Include(c => c.CarBrand)
+                .Include(c => c.CarModel)
+                .Include(c => c.CarFuelType)
+                .Include(c => c.CarColor)
+                .Include(c => c.CarCondition)
+                .Include(c => c.CarMileage)
+                .Include(c => c.CarSeats)
+                .Include(c => c.CarTransmissionType)
+                .Include(c => c.CarVersion)
+                .Include(c => c.Photos)
+                .Include(c => c.User);
+
+            if (brandId.HasValue)
+            {
+                query = query.Where(c => c.CarBrandId == brandId.Value);
+            }
+
+            if (modelId.HasValue)
+            {
+                query = query.Where(c => c.CarModelId == modelId.Value);
+            }
+
+            if (fuelTypeId.HasValue)
+            {
+                query = query.Where(c => c.CarFuelTypeId == fuelTypeId.Value);
+            }
+
+            if (colorId.HasValue)
+            {
+                query = query.Where(c => c.CarColorId == colorId.Value);
+            }
+
+            if (conditionId.HasValue)
+            {
+                query = query.Where(c => c.CarConditionId == conditionId.Value);
+            }
+
+            if (mileageId.HasValue)
+            {
+                query = query.Where(c => c.CarMileageId == mileageId.Value);
+            }
+
+            if (seatsId.HasValue)
+            {
+                query = query.Where(c => c.CarSeatsId == seatsId.Value);
+            }
+
+            if (transmissionTypeId.HasValue)
+            {
+                query = query.Where(c => c.CarTransmissionTypeId == transmissionTypeId.Value);
+            }
+
+            if (versionId.HasValue)
+            {
+                query = query.Where(c => c.CarVersionId == versionId.Value);
+            }
+            if (startDate.HasValue && endDate.HasValue)
+            {
+                query = query.Where(c => c.FirstRegistration >= startDate.Value && c.FirstRegistration <= endDate.Value);
+            }
+            var filteredCars = await query.ToListAsync();
+
+            var viewModel = new FilterCarsViewModel
+            {
+                Brands = await _context.Brands.ToListAsync(),
+                Models = await _context.Models.ToListAsync(),
+                FuelTypes = await _context.FuelTypes.ToListAsync(),
+                Colors = await _context.Colors.ToListAsync(),
+                Conditions = await _context.Condition.ToListAsync(),
+                Mileages = await _context.Mileages.ToListAsync(),
+                Seats = await _context.Seats.ToListAsync(),
+                TransmissionTypes = await _context.TransmissionTypes.ToListAsync(),
+                Versions = await _context.Versions.ToListAsync(),
+                FilteredCars = filteredCars
+            };
+        
+               
+
+            return View(viewModel);
+        }
         private bool CarExists(int id)
         {
           return (_context.Cars?.Any(e => e.Id == id)).GetValueOrDefault();

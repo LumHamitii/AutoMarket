@@ -1,0 +1,111 @@
+﻿@model AutoMarket.ViewModel.FilterCarsViewModel
+
+@{
+    ViewData["Title"] = "Filter Cars";
+}
+
+<h2>Filter Cars</h2>
+
+@using (Html.BeginForm("FilterCars", "Cars", FormMethod.Get))
+{
+    <div>
+        <label>Brand:</label>
+        @Html.DropDownListFor(model => model.BrandId, new SelectList(Model.Brands, "Id", "BrandName"), "Select Brand")
+    </div>
+
+    <div>
+        <label>Model:</label>
+        @Html.DropDownListFor(model => model.ModelId, new SelectList(Model.Models, "Id", "ModelName"), "Select Model")
+    </div>
+
+    <div>
+        <label>Fuel Type:</label>
+        @Html.DropDownListFor(model => model.FuelTypeId, new SelectList(Model.FuelTypes, "Id", "FuelType"), "Select Fuel Type")
+    </div>
+
+    <div>
+        <label>Color:</label>
+        @Html.DropDownListFor(model => model.ColorId, new SelectList(Model.Colors, "Id", "Color"), "Select Color")
+    </div>
+
+    <div>
+        <label>Condition:</label>
+        @Html.DropDownListFor(model => model.ConditionId, new SelectList(Model.Conditions, "Id", "Condition"), "Select Condition")
+    </div>
+
+    <div>
+        <label>Mileage:</label>
+        @Html.DropDownListFor(model => model.MileageId, new SelectList(Model.Mileages, "Id", "Mileage"), "Select Mileage")
+    </div>
+
+    <div>
+        <label>Seats:</label>
+        @Html.DropDownListFor(model => model.SeatsId, new SelectList(Model.Seats, "Id", "NumberofSeats"), "Select Seats")
+    </div>
+
+    <div>
+        <label>Transmission Type:</label>
+        @Html.DropDownListFor(model => model.TransmissionTypeId, new SelectList(Model.TransmissionTypes, "Id", "TransmissionType"), "Select Transmission Type")
+    </div>
+
+    <div>
+        <label>Version:</label>
+        @Html.DropDownListFor(model => model.VersionId, new SelectList(Model.Versions, "Id", "VersionType"), "Select Version")
+    </div>
+
+    <div>
+        <label>Start Date:</label>
+        @Html.TextBoxFor(model => model.StartDate, new { type = "date" })
+    </div>
+
+    <div>
+        <label>End Date:</label>
+        @Html.TextBoxFor(model => model.EndDate, new { type = "date" })
+    </div>
+
+    <button type="submit">Filter</button>
+}
+
+@if (Model.FilteredCars != null && Model.FilteredCars.Any())
+{
+    <h3>Filtered Cars</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Version</th>
+                <th>Fuel Type</th>
+                <th>Color</th>
+                <th>Mileage</th>
+                <th>Transmission Type</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var car in Model.FilteredCars)
+            {
+                <tr>
+                    <td>@(car.CarBrand?.BrandName ?? "N/A")</td>
+                    <td>@(car.CarModel?.ModelName ?? "N/A")</td>
+                    <td>@(car.CarVersion?.VersionType ?? "N/A")</td>
+                    <td>@(car.CarFuelType?.FuelType ?? "N/A")</td>
+                    <td>@(car.CarColor?.Color ?? "N/A")</td>
+                    <td>@(car.CarMileage?.Mileage ?? "N/A")</td>
+                    <td>@(car.CarTransmissionType?.TransmissionType ?? "N/A")</td>
+                    <td>
+                        @if (car.Photos != null && car.Photos.Any())
+                        {
+                            <img src="data:@(car.Photos.First().ContentType);base64,@(Convert.ToBase64String(car.Photos.First().PhotoData))" alt="Car Photo" class="thumbnail" />
+                        }
+                        else
+                        {
+                            <span>No Photo</span>
+                        }
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+}
