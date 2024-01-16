@@ -8,156 +8,100 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<div class="container">
+    <h1>Motorcycle Listings</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-<p>
-    <a asp-action="FilterMotorcycles">Filter Motorcycles</a>
-</p>
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Create New</a>
+        <a asp-action="FilterMotorcycles" class="btn btn-info">Filter Motorcycles</a>
+    </p>
 
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstRegistration)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EnginePower)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MotorcycleBrand)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MotorcycleColor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MotorcycleCondition)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MotorcycleFuelType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MotorcycleMileage)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MotorcycleModel)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MotorcycleTransmission)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MotorcycleType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MotorcycleYear)
-            </th>
-
-            <th>
-                @Html.DisplayNameFor(model => model.MotorcyclePhotos)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+    <table class="table table-striped table-bordered">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FirstRegistration)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EnginePower)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MotorcycleBrand.BrandName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MotorcycleColor.Color)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MotorcycleCondition.Condition)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MotorcycleFuelType.Fuel)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MotorcycleMileage.Mileage)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MotorcycleModel.ModelName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MotorcycleTransmission.Transmission)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MotorcycleType.Type)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MotorcycleYear.YearOfProduction)
-                </td>
-                <td>
-                    @if (item.MotorcyclePhotos != null && item.MotorcyclePhotos.Any())
-                    {
-                        <img src="data:image/jpeg;base64,@Convert.ToBase64String(item.MotorcyclePhotos.First().PhotoData)" alt="Motorcycle Photo" style="max-width: 100px; max-height: 100px;" />
-                    }
-                    else
-                    {
-                        <span>No Photo</span>
-                    }
-                </td>
-                <td>
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
-                    @{
-
-                        var canEdit = (await AuthorizationService.AuthorizeAsync(User, item, "ListingOwnerPolicy")).Succeeded;
-                        var isAdmin = User.IsInRole("Admin");
-
-                        if (canEdit || isAdmin)
-                        {
-                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                        }
-                    }
-
-                    @{
-
-                        var canDelete = (await AuthorizationService.AuthorizeAsync(User, item, "ListingOwnerPolicy")).Succeeded;
-
-                        if (canDelete)
-                        {
-                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                        }
-                    }
-                </td>
+                <th>@Html.DisplayNameFor(model => model.FirstRegistration)</th>
+                <th>@Html.DisplayNameFor(model => model.EnginePower)</th>
+                <th>@Html.DisplayNameFor(model => model.Price)</th>
+                <th>@Html.DisplayNameFor(model => model.Description)</th>
+                <th>@Html.DisplayNameFor(model => model.MotorcycleBrand)</th>
+                <th>@Html.DisplayNameFor(model => model.MotorcycleColor)</th>
+                <th>@Html.DisplayNameFor(model => model.MotorcycleCondition)</th>
+                <th>@Html.DisplayNameFor(model => model.MotorcycleFuelType)</th>
+                <th>@Html.DisplayNameFor(model => model.MotorcycleMileage)</th>
+                <th>@Html.DisplayNameFor(model => model.MotorcycleModel)</th>
+                <th>@Html.DisplayNameFor(model => model.MotorcycleTransmission)</th>
+                <th>@Html.DisplayNameFor(model => model.MotorcycleType)</th>
+                <th>@Html.DisplayNameFor(model => model.MotorcycleYear)</th>
+                <th>@Html.DisplayNameFor(model => model.MotorcyclePhotos)</th>
+                <th>Actions</th>
             </tr>
-        }
-    </tbody>
-</table>
-@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page = page }),
-        new X.PagedList.Web.Common.PagedListRenderOptions
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.FirstRegistration)</td>
+                    <td>@Html.DisplayFor(modelItem => item.EnginePower)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                    <td>@Html.DisplayFor(modelItem => item.MotorcycleBrand.BrandName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.MotorcycleColor.Color)</td>
+                    <td>@Html.DisplayFor(modelItem => item.MotorcycleCondition.Condition)</td>
+                    <td>@Html.DisplayFor(modelItem => item.MotorcycleFuelType.Fuel)</td>
+                    <td>@Html.DisplayFor(modelItem => item.MotorcycleMileage.Mileage)</td>
+                    <td>@Html.DisplayFor(modelItem => item.MotorcycleModel.ModelName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.MotorcycleTransmission.Transmission)</td>
+                    <td>@Html.DisplayFor(modelItem => item.MotorcycleType.Type)</td>
+                    <td>@Html.DisplayFor(modelItem => item.MotorcycleYear.YearOfProduction)</td>
+                    <td>
+                        @if (item.MotorcyclePhotos != null && item.MotorcyclePhotos.Any())
+                        {
+                            <img src="data:image/jpeg;base64,@Convert.ToBase64String(item.MotorcyclePhotos.First().PhotoData)" alt="Motorcycle Photo" class="img-thumbnail" style="max-width: 100px; max-height: 100px;" />
+                        }
+                        else
+                        {
+                            <span>No Photo</span>
+                        }
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a>
+                        @{
+                            var canEdit = (await AuthorizationService.AuthorizeAsync(User, item, "ListingOwnerPolicy")).Succeeded;
+                            var isAdmin = User.IsInRole("Admin");
+
+                            if (canEdit || isAdmin)
+                            {
+                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                            }
+                        }
+                        @{
+                            var canDelete = (await AuthorizationService.AuthorizeAsync(User, item, "ListingOwnerPolicy")).Succeeded;
+                            if (canDelete)
+                            {
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                            }
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page = page }),
+            new X.PagedList.Web.Common.PagedListRenderOptions
     {
         DisplayItemSliceAndTotal = true,
-        ContainerDivClasses = new[] { "navigation" },
+        ContainerDivClasses = new[] { "pagination" },
         LiElementClasses = new[] { "page-item" },
         PageClasses = new[] { "page-link" },
     })
-@section Scripts {
-    <script>
-        $(document).ready(function () {
-            $('ul.pagination > li.disabled > a').addClass('page-link');
-        });
-    </script>
-}
+
+    @section Scripts {
+        <script>
+            $(document).ready(function () {
+                $('ul.pagination > li.disabled > a').addClass('page-link');
+            });
+        </script>
+    }
+</div>
+

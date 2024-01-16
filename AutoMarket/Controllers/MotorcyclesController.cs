@@ -180,6 +180,51 @@ namespace AutoMarket.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+        // GET: Motorcycles/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null || _context.Motorcycles == null)
+            {
+                return NotFound();
+            }
+
+            var motorcycle = await _context.Motorcycles
+                .Include(m => m.MotorcycleBrand)
+                .Include(m => m.MotorcycleColor)
+                .Include(m => m.MotorcycleCondition)
+                .Include(m => m.MotorcycleFuelType)
+                .Include(m => m.MotorcycleMileage)
+                .Include(m => m.MotorcycleModel)
+                .Include(m => m.MotorcycleTransmission)
+                .Include(m => m.MotorcycleType)
+                .Include(m => m.MotorcycleYear)
+                .Include(m => m.MotorcyclePhotos)
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (motorcycle == null)
+            {
+                return NotFound();
+            }
+
+            return View(motorcycle);
+        }
+
+        // POST: Motorcycles/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var motorcycle = await _context.Motorcycles.FindAsync(id);
+
+            if (motorcycle == null)
+            {
+                return NotFound();
+            }
+
+            _context.Motorcycles.Remove(motorcycle);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+        }
         public async Task<IActionResult> FilterMotorcycles(
            [FromQuery] int? brandId,
            [FromQuery] int? modelId,
