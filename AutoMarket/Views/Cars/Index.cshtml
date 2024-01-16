@@ -31,7 +31,7 @@
             
             
             <th>
-                @Html.DisplayNameFor(model => model.CarBrand)
+                Brand
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.CarModel)
@@ -91,7 +91,7 @@
                     }
                 </td>
             <td>
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> 
                     @{
 
                         var canEdit = (await AuthorizationService.AuthorizeAsync(User, item, "ListingOwnerPolicy")).Succeeded;
@@ -102,7 +102,7 @@
                             <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
                         }
                     }
-                    |
+                    
                     @{
 
                         var canDelete = (await AuthorizationService.AuthorizeAsync(User, item, "ListingOwnerPolicy")).Succeeded;

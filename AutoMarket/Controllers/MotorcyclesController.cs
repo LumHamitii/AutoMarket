@@ -41,6 +41,7 @@ namespace AutoMarket.Controllers
                 .Include(m => m.MotorcycleTransmission)
                 .Include(m => m.MotorcycleType)
                 .Include(m => m.MotorcycleYear)
+                 .Include(m => m.MotorcyclePhotos)
                 .ToPagedListAsync(pageNumber, pageSize);
 
             return View(motorcycles);
@@ -64,6 +65,7 @@ namespace AutoMarket.Controllers
                 .Include(m => m.MotorcycleTransmission)
                 .Include(m => m.MotorcycleType)
                 .Include(m => m.MotorcycleYear)
+                .Include(m => m.MotorcyclePhotos)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (motorcycle == null)
             {
@@ -74,6 +76,7 @@ namespace AutoMarket.Controllers
         }
 
         // GET: Motorcycles/Create
+        [Authorize]
         public IActionResult Create()
         {
             ViewBag.MotorcycleBrandId = new SelectList(_context.MotorcycleBrands, "Id", "BrandName");
@@ -91,10 +94,28 @@ namespace AutoMarket.Controllers
         // POST: Motorcycles/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FirstRegistration,EnginePower,Price,Description,MotorcycleBrandId,MotorcycleModelId,MotorcycleYearId,MotorcycleTypeId,MotorcycleColorId,MotorcycleMileageId,MotorcycleConditionId,MotorcycleTransmissionId,MotorcycleFuelTypeId")] Motorcycle motorcycle)
+        public async Task<IActionResult> Create([Bind("Id,FirstRegistration,EnginePower,Price,Description,MotorcycleBrandId,MotorcycleModelId,MotorcycleYearId,MotorcycleTypeId,MotorcycleColorId,MotorcycleMileageId,MotorcycleConditionId,MotorcycleTransmissionId,MotorcycleFuelTypeId")] Motorcycle motorcycle, List<IFormFile> motorcyclePhotos)
         {
             var currentUser = await _userManager.GetUserAsync(User);
             motorcycle.User = currentUser;
+
+            if (motorcyclePhotos != null && motorcyclePhotos.Count > 0)
+            {
+                motorcycle.MotorcyclePhotos = new List<MotorcyclePhoto>();
+
+                foreach (var photo in motorcyclePhotos)
+                {
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        await photo.CopyToAsync(memoryStream);
+                        motorcycle.MotorcyclePhotos.Add(new MotorcyclePhoto
+                        {
+                            PhotoData = memoryStream.ToArray(),
+                            ContentType = photo.ContentType
+                        });
+                    }
+                }
+            }
             _context.Add(motorcycle);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

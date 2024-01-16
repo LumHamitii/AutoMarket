@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel;
 
 namespace AutoMarket.Models
 {
@@ -6,8 +7,10 @@ namespace AutoMarket.Models
     {
         public int Id { get; set; }
 
+        [DisplayName("Registration Date")]
         public DateTime FirstRegistration { get; set; }
 
+        [DisplayName("Engine Power")]
         public int EnginePower { get; set; }
 
         public float Price { get; set; }
@@ -15,6 +18,7 @@ namespace AutoMarket.Models
 
         public int MotorcycleBrandId { get; set; }
 
+      
         public int MotorcycleModelId { get; set; }
 
         public int MotorcycleYearId { get; set; }
