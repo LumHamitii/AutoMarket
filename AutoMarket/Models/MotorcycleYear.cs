@@ -6,6 +6,6 @@ namespace AutoMarket.Models
     {
         public int Id { get; set; }
 
-        public int YearOfProduction { get; set; }
+        public int? YearOfProduction { get; set; }
     }
 }

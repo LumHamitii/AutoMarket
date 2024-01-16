@@ -12,6 +12,7 @@ using X.PagedList;
 using X.PagedList.Mvc;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
+using AutoMarket.ViewModel;
 
 namespace AutoMarket.Controllers
 {
@@ -179,7 +180,100 @@ namespace AutoMarket.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+        public async Task<IActionResult> FilterMotorcycles(
+           [FromQuery] int? brandId,
+           [FromQuery] int? modelId,
+           [FromQuery] int? fuelTypeId,
+           [FromQuery] int? colorId,
+           [FromQuery] int? conditionId,
+           [FromQuery] int? mileageId,
+           [FromQuery] int? transmissionId,
+           [FromQuery] int? typeId,
+           [FromQuery] int? yearId,
+           [FromQuery] DateTime? startDate,
+           [FromQuery] DateTime? endDate)
+        {
+            IQueryable<Motorcycle> query = _context.Motorcycles
+                .Include(m => m.MotorcycleBrand)
+                .Include(m => m.MotorcycleModel)
+                .Include(m => m.MotorcycleFuelType)
+                .Include(m => m.MotorcycleColor)
+                .Include(m => m.MotorcycleCondition)
+                .Include(m => m.MotorcycleMileage)
+                .Include(m => m.MotorcycleTransmission)
+                .Include(m => m.MotorcycleType)
+                .Include(m => m.MotorcycleYear)
+                .Include(m => m.MotorcyclePhotos)
+                .Include(m => m.User);
 
+            if (brandId.HasValue)
+            {
+                query = query.Where(m => m.MotorcycleBrandId == brandId.Value);
+            }
+
+            if (modelId.HasValue)
+            {
+                query = query.Where(m => m.MotorcycleModelId == modelId.Value);
+            }
+
+            if (fuelTypeId.HasValue)
+            {
+                query = query.Where(m => m.MotorcycleFuelTypeId == fuelTypeId.Value);
+            }
+
+            if (colorId.HasValue)
+            {
+                query = query.Where(m => m.MotorcycleColorId == colorId.Value);
+            }
+
+            if (conditionId.HasValue)
+            {
+                query = query.Where(m => m.MotorcycleConditionId == conditionId.Value);
+            }
+
+            if (mileageId.HasValue)
+            {
+                query = query.Where(m => m.MotorcycleMileageId == mileageId.Value);
+            }
+
+            if (transmissionId.HasValue)
+            {
+                query = query.Where(m => m.MotorcycleTransmissionId == transmissionId.Value);
+            }
+
+            if (typeId.HasValue)
+            {
+                query = query.Where(m => m.MotorcycleTypeId == typeId.Value);
+            }
+
+            if (yearId.HasValue)
+            {
+                query = query.Where(m => m.MotorcycleYearId == yearId.Value);
+            }
+
+            if (startDate.HasValue && endDate.HasValue)
+            {
+                query = query.Where(m => m.FirstRegistration >= startDate.Value && m.FirstRegistration <= endDate.Value);
+            }
+
+            var filteredMotorcycles = await query.ToListAsync();
+
+            var viewModel = new FilterMotorcyclesViewModel
+            {
+                Brands = await _context.MotorcycleBrands.ToListAsync(),
+                Models = await _context.MotorcycleModels.ToListAsync(),
+                FuelTypes = await _context.MotorcycleFuelTypes.ToListAsync(),
+                Colors = await _context.MotorcycleColors.ToListAsync(),
+                Conditions = await _context.MotorcycleConditions.ToListAsync(),
+                Mileages = await _context.MotorcycleMileages.ToListAsync(),
+                Transmissions = await _context.MotorcycleTransmissions.ToListAsync(),
+                Types = await _context.MotorcycleTypes.ToListAsync(),
+                Years = await _context.MotorcycleYears.ToListAsync(),
+                FilteredMotorcycles = filteredMotorcycles
+            };
+
+            return View(viewModel);
+        }
         private bool MotorcycleExists(int id)
         {
             return (_context.Motorcycles?.Any(e => e.Id == id)).GetValueOrDefault();

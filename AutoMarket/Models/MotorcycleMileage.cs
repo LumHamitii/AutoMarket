@@ -6,6 +6,6 @@ namespace AutoMarket.Models
     {
         public int Id { get; set; }
 
-        public int Mileage { get; set; }
+        public int? Mileage { get; set; }
     }
 }

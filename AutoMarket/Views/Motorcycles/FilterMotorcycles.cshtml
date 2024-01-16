@@ -1,0 +1,120 @@
+﻿@model AutoMarket.ViewModel.FilterMotorcyclesViewModel
+
+@{
+    ViewData["Title"] = "Filter Motorcycles";
+}
+
+<h2>Filter Motorcycles</h2>
+
+@using (Html.BeginForm("FilterMotorcycles", "Motorcycles", FormMethod.Get))
+{
+    <div>
+        <label>Brand:</label>
+        @Html.DropDownListFor(model => model.BrandId, new SelectList(Model.Brands, "Id", "BrandName"), "Select Brand")
+    </div>
+
+    <div>
+        <label>Model:</label>
+        @Html.DropDownListFor(model => model.ModelId, new SelectList(Model.Models, "Id", "ModelName"), "Select Model")
+    </div>
+
+    <div>
+        <label>Fuel Type:</label>
+        @Html.DropDownListFor(model => model.FuelTypeId, new SelectList(Model.FuelTypes, "Id", "Fuel"), "Select Fuel Type")
+    </div>
+
+    <div>
+        <label>Color:</label>
+        @Html.DropDownListFor(model => model.ColorId, new SelectList(Model.Colors, "Id", "Color"), "Select Color")
+    </div>
+
+    <div>
+        <label>Condition:</label>
+        @Html.DropDownListFor(model => model.ConditionId, new SelectList(Model.Conditions, "Id", "Condition"), "Select Condition")
+    </div>
+
+    <div>
+        <label>Mileage:</label>
+        @Html.DropDownListFor(model => model.MileageId, new SelectList(Model.Mileages, "Id", "Mileage"), "Select Mileage")
+    </div>
+
+    <div>
+        <label>Transmission:</label>
+        @Html.DropDownListFor(model => model.TransmissionId, new SelectList(Model.Transmissions, "Id", "Transmission"), "Select Transmission")
+    </div>
+
+    <div>
+        <label>Type:</label>
+        @Html.DropDownListFor(model => model.TypeId, new SelectList(Model.Types, "Id", "Type"), "Select Type")
+    </div>
+
+    <div>
+        <label>Year:</label>
+        @Html.DropDownListFor(model => model.YearId, new SelectList(Model.Years, "Id", "YearOfProduction"), "Select Year")
+    </div>
+
+    <div>
+        <label>Start Date:</label>
+        @Html.TextBoxFor(model => model.StartDate, new { type = "date" })
+    </div>
+
+    <div>
+        <label>End Date:</label>
+        @Html.TextBoxFor(model => model.EndDate, new { type = "date" })
+    </div>
+
+    <button type="submit">Filter</button>
+}
+
+@if (Model.FilteredMotorcycles != null && Model.FilteredMotorcycles.Any())
+{
+    <h3>Filtered Motorcycles</h3>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Brand</th>
+                    <th>Model</th>
+                    <th>Fuel Type</th>
+                    <th>Color</th>
+                    <th>Condition</th>
+                    <th>Mileage</th>
+                    <th>Transmission</th>
+                    <th>Type</th>
+                    <th>Year</th>
+                    <th>Photo</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var motorcycle in Model.FilteredMotorcycles)
+                {
+                    <tr>
+                        <td>@(motorcycle.MotorcycleBrand?.BrandName ?? "N/A")</td>
+                        <td>@(motorcycle.MotorcycleModel?.ModelName ?? "N/A")</td>
+                        <td>@(motorcycle.MotorcycleFuelType?.Fuel ?? "N/A")</td>
+                        <td>@(motorcycle.MotorcycleColor?.Color ?? "N/A")</td>
+                        <td>@(motorcycle.MotorcycleCondition?.Condition ?? "N/A")</td>
+                        <td>@(motorcycle.MotorcycleMileage?.Mileage?.ToString() ?? "N/A")</td>
+                        <td>@(motorcycle.MotorcycleTransmission?.Transmission ?? "N/A")</td>
+                        <td>@(motorcycle.MotorcycleType?.Type ?? "N/A")</td>
+                        <td>@(motorcycle.MotorcycleYear?.YearOfProduction?.ToString() ?? "N/A")</td>
+                        <td>
+                            @if (motorcycle.MotorcyclePhotos != null && motorcycle.MotorcyclePhotos.Any())
+                            {
+                                <img src="data:@(motorcycle.MotorcyclePhotos.First().ContentType);base64,@(Convert.ToBase64String(motorcycle.MotorcyclePhotos.First().PhotoData))" alt="Motorcycle Photo" class="thumbnail" style="max-height: 50px;" />
+                            }
+                            else
+                            {
+                                <span>No Photo</span>
+                            }
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Details", "Motorcycles", new { id = motorcycle.Id })" class="btn btn-info btn-sm">Details</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
