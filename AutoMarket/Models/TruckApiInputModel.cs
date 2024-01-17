@@ -1,11 +1,7 @@
-﻿using Microsoft.AspNetCore.Identity;
-
-namespace AutoMarket.Models
+﻿namespace AutoMarket.Models
 {
-    public class Truck
+    public class TruckApiInputModel
     {
-        public int Id { get; set; }
-
         public DateTime FirstRegistration { get; set; }
 
         public int EnginePower { get; set; }
@@ -17,7 +13,7 @@ namespace AutoMarket.Models
         public string Description { get; set; }
 
         public string Location { get; set; }
-
+        public string UserId { get; set; }
         public int TruckBrandId { get; set; }
         public int TruckModelId { get; set; }
         public int TruckFuelTypeId { get; set; }
@@ -28,17 +24,6 @@ namespace AutoMarket.Models
         public int TruckTransmissionTypeId { get; set; }
         public int TruckVersionId { get; set; }
 
-        public string UserId { get; set; }
-        public IdentityUser User { get; set; }
-
-        public TruckBrand TruckBrand { get; set; }
-        public TruckModel TruckModel { get; set; }
-        public TruckCondition TruckCondition { get; set; }
-        public TruckColor TruckColor { get; set; }
-        public TruckFuelType TruckFuelType { get; set; }
-        public TruckMileage TruckMileage { get; set; } 
-        public TruckTransmissionType TruckTransmissionType { get; set; }
-        public TruckVersion TruckVersion { get; set; }
-        public List<TruckPhoto> TruckPhotos { get; set; } 
+        public List<IFormFile> Files { get; set; }
     }
 }
