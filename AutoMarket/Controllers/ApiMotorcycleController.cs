@@ -262,6 +262,87 @@ namespace AutoMarket.Controllers
 
             return NoContent();
         }
+            [HttpGet("filter")]
+            public async Task<ActionResult<IEnumerable<Motorcycle>>> FilterMotorcycles(
+            [FromQuery] int? brandId,
+            [FromQuery] int? modelId,
+            [FromQuery] int? fuelTypeId,
+            [FromQuery] int? colorId,
+            [FromQuery] int? conditionId,
+            [FromQuery] int? mileageId,
+            [FromQuery] int? transmissionId,
+            [FromQuery] int? typeId,
+            [FromQuery] int? yearId,
+            [FromQuery] DateTime? startDate,
+            [FromQuery] DateTime? endDate)
+            {
+                IQueryable<Motorcycle> query = _context.Motorcycles
+                    .Include(m => m.MotorcycleBrand)
+                    .Include(m => m.MotorcycleModel)
+                    .Include(m => m.MotorcycleFuelType)
+                    .Include(m => m.MotorcycleColor)
+                    .Include(m => m.MotorcycleCondition)
+                    .Include(m => m.MotorcycleMileage)
+                    .Include(m => m.MotorcycleTransmission)
+                    .Include(m => m.MotorcycleType)
+                    .Include(m => m.MotorcycleYear)
+                    .Include(m => m.MotorcyclePhotos);
+
+                if (brandId.HasValue)
+                {
+                    query = query.Where(m => m.MotorcycleBrandId == brandId.Value);
+                }
+
+                if (modelId.HasValue)
+                {
+                    query = query.Where(m => m.MotorcycleModelId == modelId.Value);
+                }
+
+                if (fuelTypeId.HasValue)
+                {
+                    query = query.Where(m => m.MotorcycleFuelTypeId == fuelTypeId.Value);
+                }
+
+                if (colorId.HasValue)
+                {
+                    query = query.Where(m => m.MotorcycleColorId == colorId.Value);
+                }
+
+                if (conditionId.HasValue)
+                {
+                    query = query.Where(m => m.MotorcycleConditionId == conditionId.Value);
+                }
+
+                if (mileageId.HasValue)
+                {
+                    query = query.Where(m => m.MotorcycleMileageId == mileageId.Value);
+                }
+
+                if (transmissionId.HasValue)
+                {
+                    query = query.Where(m => m.MotorcycleTransmissionId == transmissionId.Value);
+                }
+
+                if (typeId.HasValue)
+                {
+                    query = query.Where(m => m.MotorcycleTypeId == typeId.Value);
+                }
+
+                if (yearId.HasValue)
+                {
+                    query = query.Where(m => m.MotorcycleYearId == yearId.Value);
+                }
+
+                if (startDate.HasValue && endDate.HasValue)
+                {
+                    query = query.Where(m => m.FirstRegistration >= startDate.Value && m.FirstRegistration <= endDate.Value);
+                }
+
+                var filteredMotorcycles = await query.ToListAsync();
+
+                return Ok(filteredMotorcycles);
+            }
+
 
         private bool MotorcycleExists(int id)
         {
