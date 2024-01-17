@@ -39,6 +39,7 @@ namespace AutoMarket.Controllers
                 .Include(t => t.TruckModel)
                 .Include(t => t.TruckTransmissionType)
                 .Include(t => t.TruckVersion)
+                .Include(t => t.TruckPhotos)
                 .Include(t => t.User)
                 .ToListAsync();
 
@@ -62,6 +63,7 @@ namespace AutoMarket.Controllers
                 .Include(t => t.TruckModel)
                 .Include(t => t.TruckTransmissionType)
                 .Include(t => t.TruckVersion)
+                .Include(t => t.TruckPhotos)
                 .Include(t => t.User)
                 .FirstOrDefaultAsync(m => m.Id == id);
 
@@ -74,6 +76,7 @@ namespace AutoMarket.Controllers
         }
 
         // GET: Trucks/Create
+        [Authorize]
         public IActionResult Create()
         {
             ViewData["TruckBrandId"] = new SelectList(_context.TruckBrands, "Id", "BrandName");
@@ -148,7 +151,7 @@ namespace AutoMarket.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("\"Id,FirstRegistration,EnginePower,Price,Features,Description,Location,TruckBrandId,TruckModelId,TruckFuelTypeId,TruckColorId,TruckConditionId,TruckMileageId,TruckLoadCapacity,TruckTransmissionTypeId,TruckVersionId\"")] Truck truck)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,FirstRegistration,EnginePower,Price,Features,Description,Location,TruckBrandId,TruckModelId,TruckFuelTypeId,TruckColorId,TruckConditionId,TruckMileageId,TruckLoadCapacity,TruckTransmissionTypeId,TruckVersionId")] Truck truck)
         {
             if (id != truck.Id)
             {
@@ -193,6 +196,8 @@ namespace AutoMarket.Controllers
                 .Include(t => t.TruckModel)
                 .Include(t => t.TruckTransmissionType)
                 .Include(t => t.TruckVersion)
+                .Include(t => t.TruckPhotos)
+
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (truck == null)
             {
@@ -219,6 +224,92 @@ namespace AutoMarket.Controllers
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+        public async Task<IActionResult> FilterTrucks(
+    [FromQuery] int? brandId,
+    [FromQuery] int? modelId,
+    [FromQuery] int? fuelTypeId,
+    [FromQuery] int? colorId,
+    [FromQuery] int? conditionId,
+    [FromQuery] int? mileageId,
+    [FromQuery] int? transmissionId,
+    [FromQuery] int? versionId,
+    [FromQuery] DateTime? startDate,
+    [FromQuery] DateTime? endDate)
+        {
+            IQueryable<Truck> query = _context.Truck
+                .Include(t => t.TruckBrand)
+                .Include(t => t.TruckModel)
+                .Include(t => t.TruckFuelType)
+                .Include(t => t.TruckColor)
+                .Include(t => t.TruckCondition)
+                .Include(t => t.TruckMileage)
+                .Include(t => t.TruckTransmissionType)
+                .Include(t => t.TruckVersion)
+                .Include(t => t.TruckPhotos)
+                .Include(t => t.User);
+
+            if (brandId.HasValue)
+            {
+                query = query.Where(t => t.TruckBrandId == brandId.Value);
+            }
+
+            if (modelId.HasValue)
+            {
+                query = query.Where(t => t.TruckModelId == modelId.Value);
+            }
+
+            if (fuelTypeId.HasValue)
+            {
+                query = query.Where(t => t.TruckFuelTypeId == fuelTypeId.Value);
+            }
+
+            if (colorId.HasValue)
+            {
+                query = query.Where(t => t.TruckColorId == colorId.Value);
+            }
+
+            if (conditionId.HasValue)
+            {
+                query = query.Where(t => t.TruckConditionId == conditionId.Value);
+            }
+
+            if (mileageId.HasValue)
+            {
+                query = query.Where(t => t.TruckMileageId == mileageId.Value);
+            }
+
+            if (transmissionId.HasValue)
+            {
+                query = query.Where(t => t.TruckTransmissionTypeId == transmissionId.Value);
+            }
+
+            if (versionId.HasValue)
+            {
+                query = query.Where(t => t.TruckVersionId == versionId.Value);
+            }
+
+            if (startDate.HasValue && endDate.HasValue)
+            {
+                query = query.Where(t => t.FirstRegistration >= startDate.Value && t.FirstRegistration <= endDate.Value);
+            }
+
+            var filteredTrucks = await query.ToListAsync();
+
+            var viewModel = new FilterTrucksViewModel
+            {
+                Brands = await _context.TruckBrands.ToListAsync(),
+                Models = await _context.TruckModels.ToListAsync(),
+                FuelTypes = await _context.TruckFuelTypes.ToListAsync(),
+                Colors = await _context.TruckColors.ToListAsync(),
+                Conditions = await _context.TruckConditions.ToListAsync(),
+                Mileages = await _context.TruckMileages.ToListAsync(),
+                Transmissions = await _context.TruckTransmissionTypes.ToListAsync(),
+                Versions = await _context.TruckVersions.ToListAsync(),
+                FilteredTrucks = filteredTrucks
+            };
+
+            return View(viewModel);
         }
 
         private bool TruckExists(int id)

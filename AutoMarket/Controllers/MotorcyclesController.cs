@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AutoMarket.Data;
+using AutoMarket.Models;
+using AutoMarket.ViewModel;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using AutoMarket.Data;
-using AutoMarket.Models;
-using System.Runtime.ConstrainedExecution;
 using X.PagedList;
-using X.PagedList.Mvc;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Authorization;
-using AutoMarket.ViewModel;
 
 namespace AutoMarket.Controllers
 {

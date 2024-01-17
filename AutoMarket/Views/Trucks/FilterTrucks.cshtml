@@ -1,0 +1,113 @@
+﻿@model AutoMarket.ViewModel.FilterTrucksViewModel
+
+@{
+    ViewData["Title"] = "Filter Trucks";
+}
+
+<h2>Filter Trucks</h2>
+
+@using (Html.BeginForm("FilterTrucks", "Trucks", FormMethod.Get))
+{
+    <div>
+        <label>Brand:</label>
+        @Html.DropDownListFor(model => model.BrandId, new SelectList(Model.Brands, "Id", "BrandName"), "Select Brand")
+    </div>
+
+    <div>
+        <label>Model:</label>
+        @Html.DropDownListFor(model => model.ModelId, new SelectList(Model.Models, "Id", "ModelName"), "Select Model")
+    </div>
+
+    <div>
+        <label>Fuel Type:</label>
+        @Html.DropDownListFor(model => model.FuelTypeId, new SelectList(Model.FuelTypes, "Id", "FuelType"), "Select Fuel Type")
+    </div>
+
+    <div>
+        <label>Color:</label>
+        @Html.DropDownListFor(model => model.ColorId, new SelectList(Model.Colors, "Id", "Color"), "Select Color")
+    </div>
+
+    <div>
+        <label>Condition:</label>
+        @Html.DropDownListFor(model => model.ConditionId, new SelectList(Model.Conditions, "Id", "Condition"), "Select Condition")
+    </div>
+
+    <div>
+        <label>Mileage:</label>
+        @Html.DropDownListFor(model => model.MileageId, new SelectList(Model.Mileages, "Id", "Mileage"), "Select Mileage")
+    </div>
+
+    <div>
+        <label>Transmission:</label>
+        @Html.DropDownListFor(model => model.TransmissionId, new SelectList(Model.Transmissions, "Id", "TransmissionType"), "Select Transmission")
+    </div>
+
+    <div>
+        <label>Version:</label>
+        @Html.DropDownListFor(model => model.VersionId, new SelectList(Model.Versions, "Id", "VersionType"), "Select Version")
+    </div>
+
+    <div>
+        <label>Start Date:</label>
+        @Html.TextBoxFor(model => model.StartDate, new { type = "date" })
+    </div>
+
+    <div>
+        <label>End Date:</label>
+        @Html.TextBoxFor(model => model.EndDate, new { type = "date" })
+    </div>
+
+    <button type="submit">Filter</button>
+}
+
+@if (Model.FilteredTrucks != null && Model.FilteredTrucks.Any())
+{
+    <h3>Filtered Trucks</h3>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Brand</th>
+                    <th>Model</th>
+                    <th>Fuel Type</th>
+                    <th>Color</th>
+                    <th>Condition</th>
+                    <th>Mileage</th>
+                    <th>Transmission</th>
+                    <th>Version</th>
+                    <th>Photo</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var truck in Model.FilteredTrucks)
+                {
+                    <tr>
+                        <td>@(truck.TruckBrand?.BrandName ?? "N/A")</td>
+                        <td>@(truck.TruckModel?.ModelName ?? "N/A")</td>
+                        <td>@(truck.TruckFuelType?.FuelType ?? "N/A")</td>
+                        <td>@(truck.TruckColor?.Color ?? "N/A")</td>
+                        <td>@(truck.TruckCondition?.Condition ?? "N/A")</td>
+                        <td>@(truck.TruckMileage?.Mileage?.ToString() ?? "N/A")</td>
+                        <td>@(truck.TruckTransmissionType?.TransmissionType ?? "N/A")</td>
+                        <td>@(truck.TruckVersion?.VersionType ?? "N/A")</td>
+                        <td>
+                            @if (truck.TruckPhotos != null && truck.TruckPhotos.Any())
+                            {
+                                <img src="data:@(truck.TruckPhotos.First().ContentType);base64,@(Convert.ToBase64String(truck.TruckPhotos.First().PhotoData))" alt="Truck Photo" class="thumbnail" style="max-height: 50px;" />
+                            }
+                            else
+                            {
+                                <span>No Photo</span>
+                            }
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Details", "Trucks", new { id = truck.Id })" class="btn btn-info btn-sm">Details</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

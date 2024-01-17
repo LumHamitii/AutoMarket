@@ -28,6 +28,5 @@ namespace AutoMarket.ViewModel
         public List<MotorcycleMileage> Mileages { get; set; }
         public List<MotorcycleTransmission> Transmissions { get; set; }
         public List<MotorcycleType> Types { get; set; }
-        public List<MotorcycleYear> Years { get; set; }
     }
 }
