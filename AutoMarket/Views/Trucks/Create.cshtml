@@ -1,0 +1,97 @@
+﻿@model AutoMarket.Models.Truck
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Truck</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FirstRegistration" class="control-label"></label>
+                <input asp-for="FirstRegistration" class="form-control" />
+                <span asp-validation-for="FirstRegistration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EnginePower" class="control-label"></label>
+                <input asp-for="EnginePower" class="form-control" />
+                <span asp-validation-for="EnginePower" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Features" class="control-label"></label>
+                <input asp-for="Features" class="form-control" />
+                <span asp-validation-for="Features" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Location" class="control-label"></label>
+                <input asp-for="Location" class="form-control" />
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TruckBrandId" class="control-label"></label>
+                <select asp-for="TruckBrandId" class ="form-control" asp-items="ViewBag.TruckBrandId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TruckModelId" class="control-label"></label>
+                <select asp-for="TruckModelId" class ="form-control" asp-items="ViewBag.TruckModelId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TruckFuelTypeId" class="control-label"></label>
+                <select asp-for="TruckFuelTypeId" class ="form-control" asp-items="ViewBag.TruckFuelTypeId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TruckColorId" class="control-label"></label>
+                <select asp-for="TruckColorId" class ="form-control" asp-items="ViewBag.TruckColorId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TruckConditionId" class="control-label"></label>
+                <select asp-for="TruckConditionId" class ="form-control" asp-items="ViewBag.TruckConditionId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TruckMileageId" class="control-label"></label>
+                <select asp-for="TruckMileageId" class ="form-control" asp-items="ViewBag.TruckMileageId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TruckLoadCapacity" class="control-label"></label>
+                <input asp-for="TruckLoadCapacity" class="form-control" />
+                <span asp-validation-for="TruckLoadCapacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TruckTransmissionTypeId" class="control-label"></label>
+                <select asp-for="TruckTransmissionTypeId" class ="form-control" asp-items="ViewBag.TruckTransmissionTypeId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TruckVersionId" class="control-label"></label>
+                <select asp-for="TruckVersionId" class ="form-control" asp-items="ViewBag.TruckVersionId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TruckPhotos" class="control-label"></label>
+                <input type="file" name="photos" multiple class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

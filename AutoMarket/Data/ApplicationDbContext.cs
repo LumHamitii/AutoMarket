@@ -44,6 +44,9 @@ namespace AutoMarket.Data
             : base(options)
         {
         }
+
+
+        public DbSet<AutoMarket.Models.Truck>? Truck { get; set; }
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
         // base.OnModelCreating(modelBuilder);

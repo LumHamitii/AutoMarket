@@ -21,6 +21,10 @@ namespace AutoMarket.Authorization
             {
                 isOwner = motorcycle.User != null && motorcycle.User.Id == userId;
             }
+            else if (resource is Truck truck)
+            {
+                isOwner = truck.User != null && truck.User.Id == userId;
+            }
             if (isOwner || isAdmin)
             {
                 context.Succeed(requirement);

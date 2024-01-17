@@ -1,0 +1,149 @@
+﻿@using System.Security.Claims;
+@inject Microsoft.AspNetCore.Authorization.IAuthorizationService AuthorizationService
+@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+@model IEnumerable<AutoMarket.Models.Truck>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstRegistration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnginePower)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Features)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TruckLoadCapacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TruckBrand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TruckModel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TruckCondition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TruckColor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TruckFuelType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TruckMileage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TruckTransmissionType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TruckVersion)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstRegistration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnginePower)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Features)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TruckLoadCapacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TruckBrand.BrandName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TruckModel.ModelName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TruckCondition.Condition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TruckColor.Color)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TruckFuelType.FuelType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TruckMileage.Mileage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TruckTransmissionType.TransmissionType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TruckVersion.VersionType)
+            </td>
+                <td>
+                    @if (item.TruckPhotos != null && item.TruckPhotos.Any())
+                    {
+                        <img src="data:image/jpeg;base64,@Convert.ToBase64String(item.TruckPhotos.First().PhotoData)" alt="Car Photo" class="img-thumbnail" style="max-width: 100px; max-height: 100px;" />
+                    }
+                    else
+                    {
+                        <span>No Photo</span>
+                    }
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a>
+                    @{
+                        var canEdit = (await AuthorizationService.AuthorizeAsync(User, item, "ListingOwnerPolicy")).Succeeded;
+                        var isAdmin = User.IsInRole("Admin");
+
+                        if (canEdit || isAdmin)
+                        {
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                        }
+                    }
+                    @{
+                        var canDelete = (await AuthorizationService.AuthorizeAsync(User, item, "ListingOwnerPolicy")).Succeeded;
+
+                        if (canDelete)
+                        {
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                        }
+                    }
+                </td>
+        </tr>
+}
+    </tbody>
+</table>
