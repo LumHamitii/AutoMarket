@@ -271,7 +271,7 @@ namespace AutoMarket.Controllers
                     CarTransmissionTypeId = carApiInputModel.CarTransmissionTypeId,
                     CarVersionId = carApiInputModel.CarVersionId,
                     Photos = new List<CarPhoto>(),
-                    UserId = carApiInputModel.UserId
+                   UserId = carApiInputModel.UserId
                 };
 
                 // Fetch related entities from the database based on IDs

@@ -1,21 +1,22 @@
-﻿namespace AutoMarket.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace AutoMarket.Models
 {
     public class MotorcycleApiInputModel
     {
-        public string UserId { get; set; }
 
+        public string UserId { get; set; }
         public DateTime FirstRegistration { get; set; }
 
         public int EnginePower { get; set; }
 
         public float Price { get; set; }
         public string Description { get; set; }
-
+        public string Location { get; set; }
         public int MotorcycleBrandId { get; set; }
 
         public int MotorcycleModelId { get; set; }
 
-        public int MotorcycleYearId { get; set; }
 
         public int MotorcycleTypeId { get; set; }
 

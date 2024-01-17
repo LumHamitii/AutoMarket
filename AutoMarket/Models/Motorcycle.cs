@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AutoMarket.Models
 {
@@ -16,12 +17,12 @@ namespace AutoMarket.Models
         public float Price { get; set; }
         public string Description { get; set; }
 
+        public string Location { get; set; }
         public int MotorcycleBrandId { get; set; }
 
       
         public int MotorcycleModelId { get; set; }
 
-        public int MotorcycleYearId { get; set; }
 
         public int MotorcycleTypeId { get; set; }
 
@@ -36,7 +37,6 @@ namespace AutoMarket.Models
         public int MotorcycleFuelTypeId { get; set; }
 
         public string UserId { get; set; }
-
         public IdentityUser User { get; set; }
 
 
@@ -49,7 +49,6 @@ namespace AutoMarket.Models
         public MotorcycleModel MotorcycleModel { get; set; }
         public MotorcycleTransmission MotorcycleTransmission { get; set; }
         public MotorcycleType MotorcycleType { get; set; }
-        public MotorcycleYear MotorcycleYear { get; set; }
         public List<MotorcyclePhoto> MotorcyclePhotos { get; set; }
 
     }

@@ -33,6 +33,11 @@
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Location" class="control-label"></label>
+                <input asp-for="Location" class="form-control" />
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="MotorcycleBrandId" class="control-label"></label>
                 <select asp-for="MotorcycleBrandId" class="form-control" asp-items="ViewBag.MotorcycleBrandId"></select>
             </div>
@@ -40,10 +45,7 @@
                 <label asp-for="MotorcycleModelId" class="control-label"></label>
                 <select asp-for="MotorcycleModelId" class="form-control" asp-items="ViewBag.MotorcycleModelId"></select>
             </div>
-            <div class="form-group">
-                <label asp-for="MotorcycleYearId" class="control-label"></label>
-                <select asp-for="MotorcycleYearId" class="form-control" asp-items="ViewBag.MotorcycleYearId"></select>
-            </div>
+           
             <div class="form-group">
                 <label asp-for="MotorcycleTypeId" class="control-label"></label>
                 <select asp-for="MotorcycleTypeId" class="form-control" asp-items="ViewBag.MotorcycleTypeId"></select>

@@ -1,4 +1,6 @@
-﻿namespace AutoMarket.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace AutoMarket.Models
 {
     public class CarApiInputModel
     {
@@ -8,8 +10,8 @@
         public string Features { get; set; }
         public string Description { get; set; }
         public string Location { get; set; }
-        public string UserId { get; set; }
 
+        public string UserId { get; set; }
         public int CarBrandId { get; set; }
         public int CarModelId { get; set; }
         public int CarFuelTypeId { get; set; }

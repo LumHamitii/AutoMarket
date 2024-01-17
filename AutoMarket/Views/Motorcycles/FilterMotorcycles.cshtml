@@ -49,11 +49,6 @@
     </div>
 
     <div>
-        <label>Year:</label>
-        @Html.DropDownListFor(model => model.YearId, new SelectList(Model.Years, "Id", "YearOfProduction"), "Select Year")
-    </div>
-
-    <div>
         <label>Start Date:</label>
         @Html.TextBoxFor(model => model.StartDate, new { type = "date" })
     </div>
@@ -81,7 +76,6 @@
                     <th>Mileage</th>
                     <th>Transmission</th>
                     <th>Type</th>
-                    <th>Year</th>
                     <th>Photo</th>
                     <th>Details</th>
                 </tr>
@@ -98,7 +92,6 @@
                         <td>@(motorcycle.MotorcycleMileage?.Mileage?.ToString() ?? "N/A")</td>
                         <td>@(motorcycle.MotorcycleTransmission?.Transmission ?? "N/A")</td>
                         <td>@(motorcycle.MotorcycleType?.Type ?? "N/A")</td>
-                        <td>@(motorcycle.MotorcycleYear?.YearOfProduction?.ToString() ?? "N/A")</td>
                         <td>
                             @if (motorcycle.MotorcyclePhotos != null && motorcycle.MotorcyclePhotos.Any())
                             {

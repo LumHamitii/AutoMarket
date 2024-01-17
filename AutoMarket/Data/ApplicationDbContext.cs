@@ -10,6 +10,7 @@ namespace AutoMarket.Data
         public DbSet<Car> Cars { get; set; }
         public DbSet<CarPhoto> Photos { get; set; }
         public DbSet<MotorcyclePhoto> MotorcyclePhotos { get; set; }
+        public DbSet<TruckPhoto> TruckPhotos { get; set; }
         public DbSet<CarBrand> Brands { get; set; }
         public DbSet<CarColor> Colors { get; set; }
         public DbSet<CarCondition> Condition { get; set; }
@@ -28,7 +29,17 @@ namespace AutoMarket.Data
         public DbSet<MotorcycleModel> MotorcycleModels { get; set; }
         public DbSet<MotorcycleTransmission> MotorcycleTransmissions { get; set; }
         public DbSet<MotorcycleType> MotorcycleTypes { get; set; }
-        public DbSet<MotorcycleYear> MotorcycleYears { get; set; }
+        
+        public DbSet<TruckBrand> TruckBrands { get; set; }
+        public DbSet<TruckModel> TruckModels { get; set; }
+        public DbSet<TruckCondition> TruckConditions { get; set; }
+        public DbSet<TruckColor> TruckColors { get; set; }
+        public DbSet<TruckFuelType> TruckFuelTypes { get; set; }
+        public DbSet<TruckMileage> TruckMileages { get; set; }
+        public DbSet<TruckTransmissionType> TruckTransmissionTypes { get; set; }
+        public DbSet<TruckVersion> TruckVersions { get; set; }
+
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

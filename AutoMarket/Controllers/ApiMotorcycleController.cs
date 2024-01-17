@@ -40,7 +40,6 @@ namespace AutoMarket.Controllers
                 .Include(m => m.MotorcycleModel)
                 .Include(m => m.MotorcycleTransmission)
                 .Include(m => m.MotorcycleType)
-                .Include(m => m.MotorcycleYear)
                 .Include(m => m.MotorcyclePhotos)
                 .ToListAsync();
 
@@ -102,12 +101,6 @@ namespace AutoMarket.Controllers
             return motorcycleTypes;
         }
 
-        [HttpGet("GetMotorcycleYears")]
-        public async Task<ActionResult<IEnumerable<MotorcycleYear>>> GetMotorcycleYears()
-        {
-            var motorcycleYears = await _context.MotorcycleYears.ToListAsync();
-            return motorcycleYears;
-        }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Motorcycle>> GetMotorcycle(int id)
@@ -126,7 +119,6 @@ namespace AutoMarket.Controllers
                 .Include(m => m.MotorcycleModel)
                 .Include(m => m.MotorcycleTransmission)
                 .Include(m => m.MotorcycleType)
-                .Include(m => m.MotorcycleYear)
                 .Include(m => m.MotorcyclePhotos)
                 .Include(m => m.User)
                 .FirstOrDefaultAsync(m => m.Id == id);
@@ -181,6 +173,7 @@ namespace AutoMarket.Controllers
                     EnginePower = motorcycleApiInputModel.EnginePower,
                     Price = motorcycleApiInputModel.Price,
                     Description = motorcycleApiInputModel.Description,
+                    Location = motorcycleApiInputModel.Location,
                     MotorcycleBrandId = motorcycleApiInputModel.MotorcycleBrandId,
                     MotorcycleModelId = motorcycleApiInputModel.MotorcycleModelId,
                     MotorcycleFuelTypeId = motorcycleApiInputModel.MotorcycleFuelTypeId,
@@ -189,7 +182,6 @@ namespace AutoMarket.Controllers
                     MotorcycleMileageId = motorcycleApiInputModel.MotorcycleMileageId,
                     MotorcycleTransmissionId = motorcycleApiInputModel.MotorcycleTransmissionId,
                     MotorcycleTypeId = motorcycleApiInputModel.MotorcycleTypeId,
-                    MotorcycleYearId = motorcycleApiInputModel.MotorcycleYearId,
                     MotorcyclePhotos = new List<MotorcyclePhoto>(),
                     UserId = motorcycleApiInputModel.UserId
                 };
@@ -202,11 +194,11 @@ namespace AutoMarket.Controllers
                 motorcycle.MotorcycleMileage = await _context.MotorcycleMileages.FindAsync(motorcycle.MotorcycleMileageId);
                 motorcycle.MotorcycleTransmission = await _context.MotorcycleTransmissions.FindAsync(motorcycle.MotorcycleTransmissionId);
                 motorcycle.MotorcycleType = await _context.MotorcycleTypes.FindAsync(motorcycle.MotorcycleTypeId);
-                motorcycle.MotorcycleYear = await _context.MotorcycleYears.FindAsync(motorcycle.MotorcycleYearId);
+               
 
                 if (motorcycle.MotorcycleBrand == null || motorcycle.MotorcycleModel == null || motorcycle.MotorcycleFuelType == null ||
                     motorcycle.MotorcycleColor == null || motorcycle.MotorcycleCondition == null || motorcycle.MotorcycleMileage == null ||
-                    motorcycle.MotorcycleTransmission == null || motorcycle.MotorcycleType == null || motorcycle.MotorcycleYear == null)
+                    motorcycle.MotorcycleTransmission == null || motorcycle.MotorcycleType == null )
                 {
                     return NotFound("One or more related entities not found.");
                 }
@@ -272,7 +264,6 @@ namespace AutoMarket.Controllers
             [FromQuery] int? mileageId,
             [FromQuery] int? transmissionId,
             [FromQuery] int? typeId,
-            [FromQuery] int? yearId,
             [FromQuery] DateTime? startDate,
             [FromQuery] DateTime? endDate)
             {
@@ -285,7 +276,6 @@ namespace AutoMarket.Controllers
                     .Include(m => m.MotorcycleMileage)
                     .Include(m => m.MotorcycleTransmission)
                     .Include(m => m.MotorcycleType)
-                    .Include(m => m.MotorcycleYear)
                     .Include(m => m.MotorcyclePhotos);
 
                 if (brandId.HasValue)
@@ -326,11 +316,6 @@ namespace AutoMarket.Controllers
                 if (typeId.HasValue)
                 {
                     query = query.Where(m => m.MotorcycleTypeId == typeId.Value);
-                }
-
-                if (yearId.HasValue)
-                {
-                    query = query.Where(m => m.MotorcycleYearId == yearId.Value);
                 }
 
                 if (startDate.HasValue && endDate.HasValue)

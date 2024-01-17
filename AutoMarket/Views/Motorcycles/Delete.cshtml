@@ -35,6 +35,12 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Description)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Location)
+        </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.MotorcycleBrand)
         </dt>
@@ -83,12 +89,7 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.MotorcycleType.Type)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MotorcycleYear)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MotorcycleYear.YearOfProduction)
-        </dd>
+        
     </dl>
     
     <form asp-action="Delete">

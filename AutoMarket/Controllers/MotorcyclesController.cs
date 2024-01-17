@@ -41,7 +41,6 @@ namespace AutoMarket.Controllers
                 .Include(m => m.MotorcycleModel)
                 .Include(m => m.MotorcycleTransmission)
                 .Include(m => m.MotorcycleType)
-                .Include(m => m.MotorcycleYear)
                  .Include(m => m.MotorcyclePhotos)
                 .ToPagedListAsync(pageNumber, pageSize);
 
@@ -65,7 +64,6 @@ namespace AutoMarket.Controllers
                 .Include(m => m.MotorcycleModel)
                 .Include(m => m.MotorcycleTransmission)
                 .Include(m => m.MotorcycleType)
-                .Include(m => m.MotorcycleYear)
                 .Include(m => m.MotorcyclePhotos)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (motorcycle == null)
@@ -88,14 +86,13 @@ namespace AutoMarket.Controllers
             ViewBag.MotorcycleModelId = new SelectList(_context.MotorcycleModels, "Id", "ModelName");
             ViewBag.MotorcycleTransmissionId = new SelectList(_context.MotorcycleTransmissions, "Id", "Transmission");
             ViewBag.MotorcycleTypeId = new SelectList(_context.MotorcycleTypes, "Id", "Type");
-            ViewBag.MotorcycleYearId = new SelectList(_context.MotorcycleYears, "Id", "YearOfProduction");
             return View();
         }
 
         // POST: Motorcycles/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FirstRegistration,EnginePower,Price,Description,MotorcycleBrandId,MotorcycleModelId,MotorcycleYearId,MotorcycleTypeId,MotorcycleColorId,MotorcycleMileageId,MotorcycleConditionId,MotorcycleTransmissionId,MotorcycleFuelTypeId")] Motorcycle motorcycle, List<IFormFile> motorcyclePhotos)
+        public async Task<IActionResult> Create([Bind("Id,FirstRegistration,EnginePower,Price,Description,Location,MotorcycleBrandId,MotorcycleModelId,MotorcycleTypeId,MotorcycleColorId,MotorcycleMileageId,MotorcycleConditionId,MotorcycleTransmissionId,MotorcycleFuelTypeId")] Motorcycle motorcycle, List<IFormFile> motorcyclePhotos)
         {
             var currentUser = await _userManager.GetUserAsync(User);
             motorcycle.User = currentUser;
@@ -146,7 +143,6 @@ namespace AutoMarket.Controllers
             ViewBag.MotorcycleModelId = new SelectList(_context.MotorcycleModels, "Id", "ModelName", motorcycle.MotorcycleModelId);
             ViewBag.MotorcycleTransmissionId = new SelectList(_context.MotorcycleTransmissions, "Id", "Transmission", motorcycle.MotorcycleTransmissionId);
             ViewBag.MotorcycleTypeId = new SelectList(_context.MotorcycleTypes, "Id", "Type", motorcycle.MotorcycleTypeId);
-            ViewBag.MotorcycleYearId = new SelectList(_context.MotorcycleYears, "Id", "YearOfProduction", motorcycle.MotorcycleYearId);
 
             return View(motorcycle);
         }
@@ -154,7 +150,7 @@ namespace AutoMarket.Controllers
         // POST: Motorcycles/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,FirstRegistration,EnginePower,Price,Description,MotorcycleBrandId,MotorcycleModelId,MotorcycleYearId,MotorcycleTypeId,MotorcycleColorId,MotorcycleMileageId,MotorcycleConditionId,MotorcycleTransmissionId,MotorcycleFuelTypeId")] Motorcycle motorcycle)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,FirstRegistration,EnginePower,Price,Description,Location,MotorcycleBrandId,MotorcycleModelId,MotorcycleTypeId,MotorcycleColorId,MotorcycleMileageId,MotorcycleConditionId,MotorcycleTransmissionId,MotorcycleFuelTypeId")] Motorcycle motorcycle)
         {
             if (id != motorcycle.Id)
             {
@@ -197,7 +193,6 @@ namespace AutoMarket.Controllers
                 .Include(m => m.MotorcycleModel)
                 .Include(m => m.MotorcycleTransmission)
                 .Include(m => m.MotorcycleType)
-                .Include(m => m.MotorcycleYear)
                 .Include(m => m.MotorcyclePhotos)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (motorcycle == null)
@@ -234,7 +229,6 @@ namespace AutoMarket.Controllers
            [FromQuery] int? mileageId,
            [FromQuery] int? transmissionId,
            [FromQuery] int? typeId,
-           [FromQuery] int? yearId,
            [FromQuery] DateTime? startDate,
            [FromQuery] DateTime? endDate)
         {
@@ -247,7 +241,6 @@ namespace AutoMarket.Controllers
                 .Include(m => m.MotorcycleMileage)
                 .Include(m => m.MotorcycleTransmission)
                 .Include(m => m.MotorcycleType)
-                .Include(m => m.MotorcycleYear)
                 .Include(m => m.MotorcyclePhotos)
                 .Include(m => m.User);
 
@@ -291,11 +284,6 @@ namespace AutoMarket.Controllers
                 query = query.Where(m => m.MotorcycleTypeId == typeId.Value);
             }
 
-            if (yearId.HasValue)
-            {
-                query = query.Where(m => m.MotorcycleYearId == yearId.Value);
-            }
-
             if (startDate.HasValue && endDate.HasValue)
             {
                 query = query.Where(m => m.FirstRegistration >= startDate.Value && m.FirstRegistration <= endDate.Value);
@@ -313,7 +301,6 @@ namespace AutoMarket.Controllers
                 Mileages = await _context.MotorcycleMileages.ToListAsync(),
                 Transmissions = await _context.MotorcycleTransmissions.ToListAsync(),
                 Types = await _context.MotorcycleTypes.ToListAsync(),
-                Years = await _context.MotorcycleYears.ToListAsync(),
                 FilteredMotorcycles = filteredMotorcycles
             };
 

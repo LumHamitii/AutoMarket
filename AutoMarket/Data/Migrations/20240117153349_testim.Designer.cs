@@ -4,6 +4,7 @@ using AutoMarket.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AutoMarket.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240117153349_testim")]
+    partial class testim
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -302,10 +304,6 @@ namespace AutoMarket.Data.Migrations
                     b.Property<DateTime>("FirstRegistration")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Location")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("MotorcycleBrandId")
                         .HasColumnType("int");
 
@@ -328,6 +326,9 @@ namespace AutoMarket.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("MotorcycleTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MotorcycleYearId")
                         .HasColumnType("int");
 
                     b.Property<float>("Price")
@@ -353,6 +354,8 @@ namespace AutoMarket.Data.Migrations
                     b.HasIndex("MotorcycleTransmissionId");
 
                     b.HasIndex("MotorcycleTypeId");
+
+                    b.HasIndex("MotorcycleYearId");
 
                     b.HasIndex("UserId");
 
@@ -518,6 +521,22 @@ namespace AutoMarket.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("MotorcycleTypes");
+                });
+
+            modelBuilder.Entity("AutoMarket.Models.MotorcycleYear", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("YearOfProduction")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MotorcycleYears");
                 });
 
             modelBuilder.Entity("AutoMarket.Models.Truck", b =>
@@ -1104,6 +1123,12 @@ namespace AutoMarket.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("AutoMarket.Models.MotorcycleYear", "MotorcycleYear")
+                        .WithMany()
+                        .HasForeignKey("MotorcycleYearId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
@@ -1123,6 +1148,8 @@ namespace AutoMarket.Data.Migrations
                     b.Navigation("MotorcycleTransmission");
 
                     b.Navigation("MotorcycleType");
+
+                    b.Navigation("MotorcycleYear");
 
                     b.Navigation("User");
                 });
