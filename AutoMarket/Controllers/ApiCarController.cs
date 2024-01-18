@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using AutoMarket.Data;
 using AutoMarket.Models;
 using System.Diagnostics;
+using Microsoft.AspNetCore.JsonPatch;
+using Newtonsoft.Json;
 
 namespace AutoMarket.Controllers
 {
@@ -16,10 +18,10 @@ namespace AutoMarket.Controllers
     public class ApiCarController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
-
         public ApiCarController(ApplicationDbContext context)
         {
             _context = context;
+            
         }
 
         // GET: api/ApiiCar
@@ -215,34 +217,7 @@ namespace AutoMarket.Controllers
 
         // PUT: api/ApiiCar/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutCar(int id, Car car)
-        {
-            if (id != car.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(car).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CarExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
+       
 
         // POST: api/ApiiCar
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
@@ -327,7 +302,113 @@ namespace AutoMarket.Controllers
                 return BadRequest($"An error occurred: {ex.Message}");
             }
         }
-        
+        // PUT: api/ApiiCar/5
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        // PATCH: api/ApiiCar/5
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutCar(int id, [FromForm] CarApiInputModel updatedCar)
+        {
+            if (updatedCar == null)
+            {
+                return BadRequest("Invalid request body.");
+            }
+
+            try
+            {
+                // Fetch the existing car entity from the database
+                var existingCar = await _context.Cars
+                    .Include(c => c.CarBrand)
+                    .Include(c => c.CarColor)
+                    .Include(c => c.CarCondition)
+                    .Include(c => c.CarFuelType)
+                    .Include(c => c.CarMileage)
+                    .Include(c => c.CarModel)
+                    .Include(c => c.CarSeats)
+                    .Include(c => c.CarTransmissionType)
+                    .Include(c => c.CarVersion)
+                    .Include(c => c.Photos)
+                    .Include(c => c.User)
+                    .FirstOrDefaultAsync(c => c.Id == id);
+
+                if (existingCar == null)
+                {
+                    return NotFound($"Car with ID {id} not found.");
+                }
+
+                // Update properties of the existing car entity
+                existingCar.FirstRegistration = updatedCar.FirstRegistration;
+                existingCar.EnginePower = updatedCar.EnginePower;
+                existingCar.Price = updatedCar.Price;
+                existingCar.Features = updatedCar.Features;
+                existingCar.Description = updatedCar.Description;
+                existingCar.Location = updatedCar.Location;
+                existingCar.CarBrandId = updatedCar.CarBrandId;
+                existingCar.CarModelId = updatedCar.CarModelId;
+                existingCar.CarFuelTypeId = updatedCar.CarFuelTypeId;
+                existingCar.CarColorId = updatedCar.CarColorId;
+                existingCar.CarConditionId = updatedCar.CarConditionId;
+                existingCar.CarMileageId = updatedCar.CarMileageId;
+                existingCar.CarSeatsId = updatedCar.CarSeatsId;
+                existingCar.CarTransmissionTypeId = updatedCar.CarTransmissionTypeId;
+                existingCar.CarVersionId = updatedCar.CarVersionId;
+                existingCar.UserId = updatedCar.UserId;
+
+                // Update related entities
+                existingCar.CarBrand = await _context.Brands.FindAsync(updatedCar.CarBrandId);
+                existingCar.CarModel = await _context.Models.FindAsync(updatedCar.CarModelId);
+                existingCar.CarFuelType = await _context.FuelTypes.FindAsync(updatedCar.CarFuelTypeId);
+                existingCar.CarColor = await _context.Colors.FindAsync(updatedCar.CarColorId);
+                existingCar.CarCondition = await _context.Condition.FindAsync(updatedCar.CarConditionId);
+                existingCar.CarMileage = await _context.Mileages.FindAsync(updatedCar.CarMileageId);
+                existingCar.CarSeats = await _context.Seats.FindAsync(updatedCar.CarSeatsId);
+                existingCar.CarTransmissionType = await _context.TransmissionTypes.FindAsync(updatedCar.CarTransmissionTypeId);
+                existingCar.CarVersion = await _context.Versions.FindAsync(updatedCar.CarVersionId);
+                existingCar.User = await _context.Users.FindAsync(updatedCar.UserId);
+
+                // Check if any of the related entities is not found
+                if (existingCar.CarBrand == null || existingCar.CarModel == null || existingCar.CarFuelType == null ||
+                    existingCar.CarColor == null || existingCar.CarCondition == null || existingCar.CarMileage == null ||
+                    existingCar.CarSeats == null || existingCar.CarTransmissionType == null || existingCar.CarVersion == null)
+                {
+                    return NotFound("One or more related entities not found.");
+                }
+
+                // Update the photos (similar to the logic in PostCar)
+                foreach (var file in updatedCar.Files)
+                {
+                    if (file.Length > 0)
+                    {
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            await file.CopyToAsync(ms);
+
+                            var carPhoto = new CarPhoto
+                            {
+                                PhotoData = ms.ToArray(),
+                                ContentType = file.ContentType
+                                // Set other properties as needed (e.g., caption, description, etc.)
+                            };
+
+                            existingCar.Photos.Add(carPhoto);
+                        }
+                    }
+                }
+
+                // Save the changes to the database
+                await _context.SaveChangesAsync();
+
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"An error occurred: {ex.Message}");
+            }
+        }
+
+
+
+
+
 
 
         // DELETE: api/ApiiCar/5

@@ -890,3 +890,4 @@ D:\Github-projects\AutoMarket\AutoMarket\AutoMarket\obj\Debug\net6.0\refint\Auto
 D:\Github-projects\AutoMarket\AutoMarket\AutoMarket\obj\Debug\net6.0\AutoMarket.pdb
 D:\Github-projects\AutoMarket\AutoMarket\AutoMarket\obj\Debug\net6.0\AutoMarket.genruntimeconfig.cache
 D:\Github-projects\AutoMarket\AutoMarket\AutoMarket\obj\Debug\net6.0\ref\AutoMarket.dll
+D:\Github-projects\AutoMarket\AutoMarket\AutoMarket\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
