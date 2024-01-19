@@ -335,7 +335,6 @@ namespace AutoMarket.Controllers
                     return NotFound($"Car with ID {id} not found.");
                 }
 
-                // Update properties of the existing car entity
                 existingCar.FirstRegistration = updatedCar.FirstRegistration;
                 existingCar.EnginePower = updatedCar.EnginePower;
                 existingCar.Price = updatedCar.Price;
@@ -353,7 +352,6 @@ namespace AutoMarket.Controllers
                 existingCar.CarVersionId = updatedCar.CarVersionId;
                 existingCar.UserId = updatedCar.UserId;
 
-                // Update related entities
                 existingCar.CarBrand = await _context.Brands.FindAsync(updatedCar.CarBrandId);
                 existingCar.CarModel = await _context.Models.FindAsync(updatedCar.CarModelId);
                 existingCar.CarFuelType = await _context.FuelTypes.FindAsync(updatedCar.CarFuelTypeId);
@@ -365,7 +363,6 @@ namespace AutoMarket.Controllers
                 existingCar.CarVersion = await _context.Versions.FindAsync(updatedCar.CarVersionId);
                 existingCar.User = await _context.Users.FindAsync(updatedCar.UserId);
 
-                // Check if any of the related entities is not found
                 if (existingCar.CarBrand == null || existingCar.CarModel == null || existingCar.CarFuelType == null ||
                     existingCar.CarColor == null || existingCar.CarCondition == null || existingCar.CarMileage == null ||
                     existingCar.CarSeats == null || existingCar.CarTransmissionType == null || existingCar.CarVersion == null)
@@ -373,7 +370,6 @@ namespace AutoMarket.Controllers
                     return NotFound("One or more related entities not found.");
                 }
 
-                // Update the photos (similar to the logic in PostCar)
                 foreach (var file in updatedCar.Files)
                 {
                     if (file.Length > 0)
@@ -386,7 +382,6 @@ namespace AutoMarket.Controllers
                             {
                                 PhotoData = ms.ToArray(),
                                 ContentType = file.ContentType
-                                // Set other properties as needed (e.g., caption, description, etc.)
                             };
 
                             existingCar.Photos.Add(carPhoto);
@@ -404,13 +399,6 @@ namespace AutoMarket.Controllers
                 return BadRequest($"An error occurred: {ex.Message}");
             }
         }
-
-
-
-
-
-
-
         // DELETE: api/ApiiCar/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCar(int id)

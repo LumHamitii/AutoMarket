@@ -132,33 +132,93 @@ namespace AutoMarket.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutMotorcycle(int id, Motorcycle motorcycle)
+        public async Task<IActionResult> PutMotorcycle(int id, [FromForm] MotorcycleApiInputModel updatedMotorcycle)
         {
-            if (id != motorcycle.Id)
+            if (updatedMotorcycle == null)
             {
-                return BadRequest();
+                return BadRequest("Invalid request body.");
             }
-
-            _context.Entry(motorcycle).State = EntityState.Modified;
 
             try
             {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!MotorcycleExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+                // Fetch the existing motorcycle entity from the database
+                var existingMotorcycle = await _context.Motorcycles
+                    .Include(m => m.MotorcycleBrand)
+                    .Include(m => m.MotorcycleColor)
+                    .Include(m => m.MotorcycleCondition)
+                    .Include(m => m.MotorcycleFuelType)
+                    .Include(m => m.MotorcycleMileage)
+                    .Include(m => m.MotorcycleModel)
+                    .Include(m => m.MotorcycleTransmission)
+                    .Include(m => m.MotorcycleType)
+                    .Include(m => m.MotorcyclePhotos)  
+                    .Include(m => m.User)
+                    .FirstOrDefaultAsync(m => m.Id == id);
 
-            return NoContent();
+                if (existingMotorcycle == null)
+                {
+                    return NotFound($"Motorcycle with ID {id} not found.");
+                }
+
+                existingMotorcycle.FirstRegistration = updatedMotorcycle.FirstRegistration;
+                existingMotorcycle.EnginePower = updatedMotorcycle.EnginePower;
+                existingMotorcycle.Price = updatedMotorcycle.Price;
+                existingMotorcycle.Description = updatedMotorcycle.Description;
+                existingMotorcycle.Location = updatedMotorcycle.Location;
+                existingMotorcycle.MotorcycleBrandId = updatedMotorcycle.MotorcycleBrandId;
+                existingMotorcycle.MotorcycleModelId = updatedMotorcycle.MotorcycleModelId;
+                existingMotorcycle.MotorcycleFuelTypeId = updatedMotorcycle.MotorcycleFuelTypeId;
+                existingMotorcycle.MotorcycleColorId = updatedMotorcycle.MotorcycleColorId;
+                existingMotorcycle.MotorcycleConditionId = updatedMotorcycle.MotorcycleConditionId;
+                existingMotorcycle.MotorcycleMileageId = updatedMotorcycle.MotorcycleMileageId;
+                existingMotorcycle.MotorcycleTransmissionId = updatedMotorcycle.MotorcycleTransmissionId;
+                existingMotorcycle.UserId = updatedMotorcycle.UserId;
+
+                existingMotorcycle.MotorcycleBrand = await _context.MotorcycleBrands.FindAsync(updatedMotorcycle.MotorcycleBrandId);
+                existingMotorcycle.MotorcycleModel = await _context.MotorcycleModels.FindAsync(updatedMotorcycle.MotorcycleModelId);
+                existingMotorcycle.MotorcycleFuelType = await _context.MotorcycleFuelTypes.FindAsync(updatedMotorcycle.MotorcycleFuelTypeId);
+                existingMotorcycle.MotorcycleColor = await _context.MotorcycleColors.FindAsync(updatedMotorcycle.MotorcycleColorId);
+                existingMotorcycle.MotorcycleCondition = await _context.MotorcycleConditions.FindAsync(updatedMotorcycle.MotorcycleConditionId);
+                existingMotorcycle.MotorcycleMileage = await _context.MotorcycleMileages.FindAsync(updatedMotorcycle.MotorcycleMileageId);
+                existingMotorcycle.MotorcycleTransmission = await _context.MotorcycleTransmissions.FindAsync(updatedMotorcycle.MotorcycleTransmissionId);
+
+                if (existingMotorcycle.MotorcycleBrand == null || existingMotorcycle.MotorcycleModel == null || existingMotorcycle.MotorcycleFuelType == null ||
+                    existingMotorcycle.MotorcycleColor == null || existingMotorcycle.MotorcycleCondition == null || existingMotorcycle.MotorcycleMileage == null ||
+                    existingMotorcycle.MotorcycleTransmission == null)
+                {
+                    return NotFound("One or more related entities not found.");
+                }
+
+                foreach (var file in updatedMotorcycle.Files)
+                {
+                    if (file.Length > 0)
+                    {
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            await file.CopyToAsync(ms);
+
+                            var motorcyclePhoto = new MotorcyclePhoto
+                            {
+                                PhotoData = ms.ToArray(),
+                                ContentType = file.ContentType
+                            };
+
+                            existingMotorcycle.MotorcyclePhotos.Add(motorcyclePhoto);
+
+                        }
+                    }
+                }
+
+                await _context.SaveChangesAsync();
+
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"An error occurred: {ex.Message}");
+            }
         }
+
 
         [HttpPost]
         public async Task<ActionResult<Motorcycle>> PostMotorcycle([FromForm] MotorcycleApiInputModel motorcycleApiInputModel)
