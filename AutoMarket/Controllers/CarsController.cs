@@ -254,7 +254,12 @@ namespace AutoMarket.Controllers
         [FromQuery] int? transmissionTypeId,
         [FromQuery] int? versionId,
         [FromQuery] DateTime? startDate,
-        [FromQuery] DateTime? endDate)
+        [FromQuery] DateTime? endDate,
+        [FromQuery] string sortByPrice, 
+        [FromQuery] float? minPrice,   
+        [FromQuery] float? maxPrice,
+        [FromQuery] bool? isNew,
+        [FromQuery] bool? isUsed)
 
         {
             IQueryable<Car> query = _context.Cars
@@ -290,11 +295,6 @@ namespace AutoMarket.Controllers
                 query = query.Where(c => c.CarColorId == colorId.Value);
             }
 
-            if (conditionId.HasValue)
-            {
-                query = query.Where(c => c.CarConditionId == conditionId.Value);
-            }
-
             if (mileageId.HasValue)
             {
                 query = query.Where(c => c.CarMileageId == mileageId.Value);
@@ -317,6 +317,41 @@ namespace AutoMarket.Controllers
             if (startDate.HasValue && endDate.HasValue)
             {
                 query = query.Where(c => c.FirstRegistration >= startDate.Value && c.FirstRegistration <= endDate.Value);
+            }
+            if (minPrice.HasValue)
+            {
+                query = query.Where(c => c.Price >= minPrice.Value);
+            }
+
+            if (maxPrice.HasValue)
+            {
+                query = query.Where(c => c.Price <= maxPrice.Value);
+            }
+
+            // Sorting
+            switch (sortByPrice)
+            {
+                case "lowToHigh":
+                    query = query.OrderBy(c => c.Price);
+                    break;
+                case "highToLow":
+                    query = query.OrderByDescending(c => c.Price);
+                    break;
+
+                default:
+                    break;
+            }
+            
+            if (isNew.HasValue && isNew.Value)
+            {
+
+                query = query.Where(c => c.CarCondition.Condition == "New");
+            }
+
+            if (isUsed.HasValue && isUsed.Value)
+            {
+
+                query = query.Where(c => c.CarCondition.Condition == "Used");
             }
             var filteredCars = await query.ToListAsync();
 

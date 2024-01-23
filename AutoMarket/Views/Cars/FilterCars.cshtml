@@ -29,11 +29,6 @@
     </div>
 
     <div>
-        <label>Condition:</label>
-        @Html.DropDownListFor(model => model.ConditionId, new SelectList(Model.Conditions, "Id", "Condition"), "Select Condition")
-    </div>
-
-    <div>
         <label>Mileage:</label>
         @Html.DropDownListFor(model => model.MileageId, new SelectList(Model.Mileages, "Id", "Mileage"), "Select Mileage")
     </div>
@@ -62,7 +57,36 @@
         <label>End Date:</label>
         @Html.TextBoxFor(model => model.EndDate, new { type = "date" })
     </div>
+    <div>
+        <label>Sort by Price:</label>
+        @Html.DropDownListFor(model => model.SortByPrice, new SelectList(new[]
+    {
+    new { Value = "lowToHigh", Text = "Low to High" },
+    new { Value = "highToLow", Text = "High to Low" }
+    }, "Value", "Text"), "Select Sort Order")
+    </div>
 
+    <div>
+        <label>Price Range:</label>
+        @Html.TextBoxFor(model => model.MinPrice, new { placeholder = "Min Price" })
+        @Html.TextBoxFor(model => model.MaxPrice, new { placeholder = "Max Price" })
+    </div>
+    <div>
+        <label>Car Condition:</label>
+        <div>
+            <label>
+                <input type="checkbox" asp-for="IsNew" />
+                New
+            </label>
+        </div>
+
+        <div>
+            <label>
+                <input type="checkbox" asp-for="IsUsed" />
+                Used
+            </label>
+        </div>
+    </div>
     <button type="submit">Filter</button>
 }
 
