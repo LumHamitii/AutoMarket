@@ -6,6 +6,7 @@ namespace AutoMarket.ViewModel
 {
     public class FilterMotorcyclesViewModel
     {
+        public float? Price { get; set; }
         public int? BrandId { get; set; }
         public int? ModelId { get; set; }
         public int? FuelTypeId { get; set; }
@@ -17,6 +18,12 @@ namespace AutoMarket.ViewModel
         public int? YearId { get; set; }
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
+
+        public string SortByPrice { get; set; }
+        public float? MinPrice { get; set; }
+        public float? MaxPrice { get; set; }
+        public bool IsNew { get; set; }
+        public bool IsUsed { get; set; }
 
         public List<Motorcycle> FilteredMotorcycles { get; set; }
 

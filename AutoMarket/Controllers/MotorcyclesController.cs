@@ -224,7 +224,13 @@ namespace AutoMarket.Controllers
            [FromQuery] int? transmissionId,
            [FromQuery] int? typeId,
            [FromQuery] DateTime? startDate,
-           [FromQuery] DateTime? endDate)
+           [FromQuery] DateTime? endDate,
+           [FromQuery] string sortByPrice,
+           [FromQuery] float? minPrice,
+           [FromQuery] float? maxPrice,
+           [FromQuery] bool? isNew,
+           [FromQuery] bool? isUsed)
+
         {
             IQueryable<Motorcycle> query = _context.Motorcycles
                 .Include(m => m.MotorcycleBrand)
@@ -258,11 +264,6 @@ namespace AutoMarket.Controllers
                 query = query.Where(m => m.MotorcycleColorId == colorId.Value);
             }
 
-            if (conditionId.HasValue)
-            {
-                query = query.Where(m => m.MotorcycleConditionId == conditionId.Value);
-            }
-
             if (mileageId.HasValue)
             {
                 query = query.Where(m => m.MotorcycleMileageId == mileageId.Value);
@@ -282,6 +283,43 @@ namespace AutoMarket.Controllers
             {
                 query = query.Where(m => m.FirstRegistration >= startDate.Value && m.FirstRegistration <= endDate.Value);
             }
+            
+             if (minPrice.HasValue)
+            {
+                query = query.Where(m => m.Price >= minPrice.Value);
+            }
+
+            if (maxPrice.HasValue)
+            {
+                query = query.Where(m => m.Price <= maxPrice.Value);
+            }
+
+            
+            switch (sortByPrice)
+            {
+                case "lowToHigh":
+                    query = query.OrderBy(m => m.Price);
+                    break;
+                case "highToLow":
+                    query = query.OrderByDescending(m => m.Price);
+                    break;
+
+                default:
+                    break;
+            }
+            
+            if (isNew.HasValue && isNew.Value)
+            {
+
+                query = query.Where(m => m.MotorcycleCondition.Condition == "New");
+            }
+
+            if (isUsed.HasValue && isUsed.Value)
+            {
+
+                query = query.Where(m => m.MotorcycleCondition.Condition == "Used");
+            }
+             
 
             var filteredMotorcycles = await query.ToListAsync();
 
