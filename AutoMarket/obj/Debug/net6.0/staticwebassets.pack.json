@@ -245,6 +245,10 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\lumha\\Desktop\\AutoMarket\\AutoMarket\\wwwroot\\uploads\\AutoMarket.png",
+      "PackagePath": "staticwebassets\\uploads\\AutoMarket.png"
+    },
+    {
       "Id": "C:\\Users\\lumha\\Desktop\\AutoMarket\\AutoMarket\\wwwroot\\uploads\\s.jpg",
       "PackagePath": "staticwebassets\\uploads\\s.jpg"
     },

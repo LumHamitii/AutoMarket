@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "QpOSaYd+kByIrcDB/5JK2nFAIWErK+QtEqmUse+Snuc=",
+  "Hash": "OgLS3q6LCTvYPom1T5GRQV2AGxjj1bF+PYaEcz81SIk=",
   "Source": "AutoMarket",
   "BasePath": "_content/AutoMarket",
   "Mode": "Default",
@@ -2333,6 +2333,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\lumha\\Desktop\\AutoMarket\\AutoMarket\\wwwroot\\uploads\\AutoMarket.png",
+      "SourceId": "AutoMarket",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\lumha\\Desktop\\AutoMarket\\AutoMarket\\wwwroot\\",
+      "BasePath": "_content/AutoMarket",
+      "RelativePath": "uploads/AutoMarket.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\AutoMarket.png"
     },
     {
       "Identity": "C:\\Users\\lumha\\Desktop\\AutoMarket\\AutoMarket\\wwwroot\\uploads\\s.jpg",
