@@ -1,0 +1,101 @@
+﻿@model AutoMarket.Models.Car
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Car</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" asp-controller="UserListings">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="FirstRegistration" class="control-label"></label>
+                <input asp-for="FirstRegistration" class="form-control" />
+                <span asp-validation-for="FirstRegistration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EnginePower" class="control-label"></label>
+                <input asp-for="EnginePower" class="form-control" />
+                <span asp-validation-for="EnginePower" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Features" class="control-label"></label>
+                <input asp-for="Features" class="form-control" />
+                <span asp-validation-for="Features" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Location" class="control-label"></label>
+                <input asp-for="Location" class="form-control" />
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarBrandId" class="control-label"></label>
+                <select asp-for="CarBrandId" class="form-control" asp-items="ViewBag.CarBrandId"></select>
+                <span asp-validation-for="CarBrandId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarModelId" class="control-label"></label>
+                <select asp-for="CarModelId" class="form-control" asp-items="ViewBag.CarModelId"></select>
+                <span asp-validation-for="CarModelId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarFuelTypeId" class="control-label"></label>
+                <select asp-for="CarFuelTypeId" class="form-control" asp-items="ViewBag.CarFuelTypeId"></select>
+                <span asp-validation-for="CarFuelTypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarColorId" class="control-label"></label>
+                <select asp-for="CarColorId" class="form-control" asp-items="ViewBag.CarColorId"></select>
+                <span asp-validation-for="CarColorId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarConditionId" class="control-label"></label>
+                <select asp-for="CarConditionId" class="form-control" asp-items="ViewBag.CarConditionId"></select>
+                <span asp-validation-for="CarConditionId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarMileageId" class="control-label"></label>
+                <select asp-for="CarMileageId" class="form-control" asp-items="ViewBag.CarMileageId"></select>
+                <span asp-validation-for="CarMileageId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarSeatsId" class="control-label"></label>
+                <select asp-for="CarSeatsId" class="form-control" asp-items="ViewBag.CarSeatsId"></select>
+                <span asp-validation-for="CarSeatsId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarTransmissionTypeId" class="control-label"></label>
+                <select asp-for="CarTransmissionTypeId" class="form-control" asp-items="ViewBag.CarTransmissionTypeId"></select>
+                <span asp-validation-for="CarTransmissionTypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarVersionId" class="control-label"></label>
+                <select asp-for="CarVersionId" class="form-control" asp-items="ViewBag.CarVersionId"></select>
+                <span asp-validation-for="CarVersionId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="MyCars">Back to List</a>
+</div>
+

@@ -30,7 +30,6 @@ namespace AutoMarket.Models
         public int CarTransmissionTypeId { get; set; }
         public int CarVersionId { get; set; }
 
-        public string UserId { get; set; }
         public IdentityUser User { get; set; }
 
         public CarBrand CarBrand { get; set; }

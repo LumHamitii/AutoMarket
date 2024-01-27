@@ -48,6 +48,12 @@
                                 <a class="nav-link text-dark" asp-area="Admin" asp-controller="Home" asp-action="Index">Admin-Dashboard</a>
                             </li>
                         }
+                        @if (User.IsInRole("User"))
+                        {
+                            <li class="nav-item @(Context.Request.Path.StartsWithSegments("/Admin/UserListings/MyCars") ? "active" : "")">
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="UserListings" asp-action="MyCars">User-Dashboard</a>
+                            </li>
+                        }
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>

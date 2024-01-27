@@ -18,6 +18,7 @@ namespace AutoMarket.Areas.Admin.Controllers
             _roleManager = roleManager;
         }
 
+
         public IActionResult Index()
         {
             var users = _userManager.Users;

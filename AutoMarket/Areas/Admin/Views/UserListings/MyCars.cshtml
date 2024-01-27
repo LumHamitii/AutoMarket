@@ -1,0 +1,36 @@
+﻿@model List<AutoMarket.Models.Car>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>My Listed Cars (Admin)</h2>
+
+@if (Model.Any())
+{
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Registration</th>
+                <th>Actions</th> <!-- Add a new column for actions -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var car in Model)
+            {
+                <tr>
+                    <td>@car.Id</td>
+                    <td>@car.FirstRegistration</td>
+                    <td>
+                        <!-- Add edit and delete buttons with links to the respective actions -->
+                        <a asp-action="Edit" asp-route-id="@car.Id" class="btn btn-warning">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@car.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No cars listed.</p>
+}

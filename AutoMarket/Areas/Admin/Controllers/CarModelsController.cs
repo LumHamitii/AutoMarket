@@ -7,10 +7,13 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AutoMarket.Data;
 using AutoMarket.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AutoMarket.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
+
     public class CarModelsController : Controller
     {
         private readonly ApplicationDbContext _context;
