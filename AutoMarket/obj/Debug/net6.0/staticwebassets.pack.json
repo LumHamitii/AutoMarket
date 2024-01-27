@@ -249,6 +249,14 @@
       "PackagePath": "staticwebassets\\uploads\\AutoMarket.png"
     },
     {
+      "Id": "C:\\Users\\lumha\\Desktop\\AutoMarket\\AutoMarket\\wwwroot\\uploads\\hero.avif",
+      "PackagePath": "staticwebassets\\uploads\\hero.avif"
+    },
+    {
+      "Id": "C:\\Users\\lumha\\Desktop\\AutoMarket\\AutoMarket\\wwwroot\\uploads\\highway.jpg",
+      "PackagePath": "staticwebassets\\uploads\\highway.jpg"
+    },
+    {
       "Id": "C:\\Users\\lumha\\Desktop\\AutoMarket\\AutoMarket\\wwwroot\\uploads\\s.jpg",
       "PackagePath": "staticwebassets\\uploads\\s.jpg"
     },
