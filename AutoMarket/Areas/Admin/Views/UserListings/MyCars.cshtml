@@ -10,8 +10,9 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>First Registration</th>
-                <th>Actions</th> <!-- Add a new column for actions -->
+                <th>Car Brand</th>
+                <th>Car Model</th>
+                <th>Actions</th> 
             </tr>
         </thead>
         <tbody>
@@ -19,9 +20,10 @@
             {
                 <tr>
                     <td>@car.Id</td>
-                    <td>@car.FirstRegistration</td>
+                    <td>@(car.CarBrand != null ? car.CarBrand.BrandName : "N/A")</td>
+                    <td>@(car.CarModel != null ? car.CarModel.ModelName : "N/A")</td>
                     <td>
-                        <!-- Add edit and delete buttons with links to the respective actions -->
+                  
                         <a asp-action="Edit" asp-route-id="@car.Id" class="btn btn-warning">Edit</a>
                         <a asp-action="Delete" asp-route-id="@car.Id" class="btn btn-danger">Delete</a>
                     </td>

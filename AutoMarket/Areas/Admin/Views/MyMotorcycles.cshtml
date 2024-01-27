@@ -1,0 +1,38 @@
+﻿@model List<AutoMarket.Models.Motorcycle>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>My Listed Motorcycles (Admin)</h2>
+
+@if (Model.Any())
+{
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Car Brand</th>
+                <th>Car Model</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var motorcycle in Model)
+            {
+                <tr>
+                    <td>@motorcycle.Id</td>
+                    <td>@(motorcycle.MotorcycleBrand != null ? motorcycle.MotorcycleBrand.BrandName : "N/A")</td>
+                    <td>@(motorcycle.MotorcycleModel != null ? motorcycle.MotorcycleModel.ModelName : "N/A")</td>
+                    <td>
+
+                        <a asp-action="Edit" asp-route-id="@motorcycle.Id" class="btn btn-warning">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@motorcycle.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No cars listed.</p>
+}

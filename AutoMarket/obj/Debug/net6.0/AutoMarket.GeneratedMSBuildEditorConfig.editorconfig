@@ -9,577 +9,595 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AutoMarket
 build_property.RootNamespace = AutoMarket
-build_property.ProjectDir = D:\Github-projects\AutoMarket\AutoMarket\AutoMarket\
+build_property.ProjectDir = C:\Users\lumha\Desktop\AutoMarket\AutoMarket\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Github-projects\AutoMarket\AutoMarket\AutoMarket
+build_property.MSBuildProjectDirectory = C:\Users\lumha\Desktop\AutoMarket\AutoMarket
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/CarBrands/Create.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/CarBrands/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2FyQnJhbmRzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/CarBrands/Delete.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/CarBrands/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2FyQnJhbmRzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/CarBrands/Details.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/CarBrands/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2FyQnJhbmRzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/CarBrands/Edit.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/CarBrands/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2FyQnJhbmRzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/CarBrands/Index.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/CarBrands/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2FyQnJhbmRzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/CarColors/Create.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/CarColors/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2FyQ29sb3JzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/CarColors/Delete.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/CarColors/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2FyQ29sb3JzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/CarColors/Details.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/CarColors/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2FyQ29sb3JzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/CarColors/Edit.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/CarColors/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2FyQ29sb3JzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/CarColors/Index.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/CarColors/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2FyQ29sb3JzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/CarModels/Create.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/CarModels/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2FyTW9kZWxzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/CarModels/Delete.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/CarModels/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2FyTW9kZWxzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/CarModels/Details.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/CarModels/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2FyTW9kZWxzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/CarModels/Edit.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/CarModels/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2FyTW9kZWxzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/CarModels/Index.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/CarModels/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2FyTW9kZWxzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/CarVersions/Create.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/CarVersions/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2FyVmVyc2lvbnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/CarVersions/Delete.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/CarVersions/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2FyVmVyc2lvbnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/CarVersions/Details.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/CarVersions/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2FyVmVyc2lvbnNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/CarVersions/Edit.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/CarVersions/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2FyVmVyc2lvbnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/CarVersions/Index.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/CarVersions/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2FyVmVyc2lvbnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/Home/Index.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleBrands/Create.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleBrands/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZUJyYW5kc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleBrands/Delete.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleBrands/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZUJyYW5kc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleBrands/Details.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleBrands/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZUJyYW5kc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleBrands/Edit.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleBrands/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZUJyYW5kc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleBrands/Index.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleBrands/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZUJyYW5kc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleColors/Create.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleColors/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZUNvbG9yc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleColors/Delete.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleColors/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZUNvbG9yc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleColors/Details.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleColors/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZUNvbG9yc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleColors/Edit.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleColors/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZUNvbG9yc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleColors/Index.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleColors/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZUNvbG9yc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleConditions/Create.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleConditions/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZUNvbmRpdGlvbnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleConditions/Delete.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleConditions/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZUNvbmRpdGlvbnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleConditions/Details.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleConditions/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZUNvbmRpdGlvbnNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleConditions/Edit.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleConditions/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZUNvbmRpdGlvbnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleConditions/Index.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleConditions/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZUNvbmRpdGlvbnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleModels/Create.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleModels/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZU1vZGVsc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleModels/Delete.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleModels/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZU1vZGVsc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleModels/Details.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleModels/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZU1vZGVsc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleModels/Edit.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleModels/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZU1vZGVsc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleModels/Index.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MotorcycleModels/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTW90b3JjeWNsZU1vZGVsc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/TruckBrands/Create.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/MyMotorcycles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTXlNb3RvcmN5Y2xlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/TruckBrands/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1Y2tCcmFuZHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/TruckBrands/Delete.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/TruckBrands/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1Y2tCcmFuZHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/TruckBrands/Details.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/TruckBrands/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1Y2tCcmFuZHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/TruckBrands/Edit.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/TruckBrands/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1Y2tCcmFuZHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/TruckBrands/Index.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/TruckBrands/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1Y2tCcmFuZHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/TruckColors/Create.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/TruckColors/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1Y2tDb2xvcnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/TruckColors/Delete.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/TruckColors/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1Y2tDb2xvcnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/TruckColors/Details.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/TruckColors/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1Y2tDb2xvcnNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/TruckColors/Edit.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/TruckColors/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1Y2tDb2xvcnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/TruckColors/Index.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/TruckColors/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1Y2tDb2xvcnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/TruckConditions/Create.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/TruckConditions/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1Y2tDb25kaXRpb25zXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/TruckConditions/Delete.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/TruckConditions/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1Y2tDb25kaXRpb25zXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/TruckConditions/Details.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/TruckConditions/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1Y2tDb25kaXRpb25zXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/TruckConditions/Edit.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/TruckConditions/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1Y2tDb25kaXRpb25zXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/TruckConditions/Index.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/TruckConditions/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1Y2tDb25kaXRpb25zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/TruckFuelTypes/Create.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/TruckFuelTypes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1Y2tGdWVsVHlwZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/TruckFuelTypes/Delete.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/TruckFuelTypes/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1Y2tGdWVsVHlwZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/TruckFuelTypes/Details.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/TruckFuelTypes/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1Y2tGdWVsVHlwZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/TruckFuelTypes/Edit.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/TruckFuelTypes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1Y2tGdWVsVHlwZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/TruckFuelTypes/Index.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/TruckFuelTypes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1Y2tGdWVsVHlwZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/TruckMileages/Create.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/TruckMileages/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1Y2tNaWxlYWdlc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/TruckMileages/Delete.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/TruckMileages/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1Y2tNaWxlYWdlc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/TruckMileages/Details.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/TruckMileages/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1Y2tNaWxlYWdlc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/TruckMileages/Edit.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/TruckMileages/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1Y2tNaWxlYWdlc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/TruckMileages/Index.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/TruckMileages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1Y2tNaWxlYWdlc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/TruckModels/Create.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/TruckModels/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1Y2tNb2RlbHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/TruckModels/Delete.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/TruckModels/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1Y2tNb2RlbHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/TruckModels/Details.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/TruckModels/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1Y2tNb2RlbHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/TruckModels/Edit.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/TruckModels/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1Y2tNb2RlbHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/TruckModels/Index.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/TruckModels/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJ1Y2tNb2RlbHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/UserListings/Delete.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/UserListings/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlckxpc3RpbmdzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/UserListings/Edit.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/UserListings/DeleteMotorcycle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlckxpc3RpbmdzXERlbGV0ZU1vdG9yY3ljbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/UserListings/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlckxpc3RpbmdzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/Views/UserListings/MyCars.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/UserListings/EditMotorcycle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlckxpc3RpbmdzXEVkaXRNb3RvcmN5Y2xlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/UserListings/MyCars.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlckxpc3RpbmdzXE15Q2Fycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Admin/_ViewImports.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/Views/UserListings/UserDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlckxpc3RpbmdzXFVzZXJEYXNoYm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Admin/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/AccessDenied.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWxDaGFuZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/ExternalLogin.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/ExternalLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxFeHRlcm5hbExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Lockout.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Lockout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2Nrb3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Login.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/LoginWith2fa.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/LoginWith2fa.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbldpdGgyZmEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbldpdGhSZWNvdmVyeUNvZGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Logout.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRGVsZXRlUGVyc29uYWxEYXRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRGlzYWJsZTJmYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRG93bmxvYWRQZXJzb25hbERhdGEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/Email.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/Email.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRW5hYmxlQXV0aGVudGljYXRvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRXh0ZXJuYWxMb2dpbnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcR2VuZXJhdGVSZWNvdmVyeUNvZGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/Index.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcUGVyc29uYWxEYXRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcUmVzZXRBdXRoZW50aWNhdG9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcU2V0UGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/ShowRecoveryCodes.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/ShowRecoveryCodes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcU2hvd1JlY292ZXJ5Q29kZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcVHdvRmFjdG9yQXV0aGVudGljYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1N0YXR1c01lc3NhZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Register.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3RlckNvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNlbmRFbWFpbENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/ResetPassword.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkQ29uZmlybWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/_StatusMessage.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/_StatusMessage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfU3RhdHVzTWVzc2FnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/Error.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/_ViewImports.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Views/Cars/Create.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Views/Cars/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fyc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Views/Cars/Delete.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Views/Cars/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fyc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Views/Cars/Details.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Views/Cars/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fyc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Views/Cars/Edit.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Views/Cars/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fyc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Views/Cars/FilterCars.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Views/Cars/FilterCars.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fyc1xGaWx0ZXJDYXJzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Views/Cars/Index.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Views/Cars/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fyc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Views/Home/Index.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Views/Home/Privacy.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Views/Motorcycles/Create.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Views/Motorcycles/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW90b3JjeWNsZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Views/Motorcycles/Delete.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Views/Motorcycles/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW90b3JjeWNsZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Views/Motorcycles/Details.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Views/Motorcycles/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW90b3JjeWNsZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Views/Motorcycles/Edit.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Views/Motorcycles/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW90b3JjeWNsZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Views/Motorcycles/FilterMotorcycles.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Views/Motorcycles/FilterMotorcycles.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW90b3JjeWNsZXNcRmlsdGVyTW90b3JjeWNsZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Views/Motorcycles/Index.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Views/Motorcycles/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW90b3JjeWNsZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Views/Shared/Error.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Views/Shared/_LayoutAdmin.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Views/Shared/_LayoutAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Views/Trucks/Create.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Views/Trucks/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJ1Y2tzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Views/Trucks/Delete.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Views/Trucks/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJ1Y2tzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Views/Trucks/Details.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Views/Trucks/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJ1Y2tzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Views/Trucks/Edit.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Views/Trucks/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJ1Y2tzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Views/Trucks/FilterTrucks.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Views/Trucks/FilterTrucks.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJ1Y2tzXEZpbHRlclRydWNrcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Views/Trucks/Index.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Views/Trucks/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJ1Y2tzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Views/_ViewImports.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Views/_ViewStart.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Github-projects/AutoMarket/AutoMarket/AutoMarket/Views/Shared/_Layout.cshtml]
+[C:/Users/lumha/Desktop/AutoMarket/AutoMarket/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-yxjgbf2y9t

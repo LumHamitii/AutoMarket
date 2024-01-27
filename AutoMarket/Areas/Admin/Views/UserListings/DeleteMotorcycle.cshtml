@@ -1,0 +1,99 @@
+﻿@model AutoMarket.Models.Motorcycle
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Motorcycle</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstRegistration)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FirstRegistration)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EnginePower)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EnginePower)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MotorcycleBrand)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MotorcycleBrand.BrandName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MotorcycleModel)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MotorcycleModel.ModelName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MotorcycleCondition)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MotorcycleCondition.Condition)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MotorcycleColor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MotorcycleColor.Color)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MotorcycleFuelType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MotorcycleFuelType.Fuel)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MotorcycleMileage)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MotorcycleMileage.Mileage)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MotorcycleTransmission)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MotorcycleTransmission.Transmission)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MotorcycleType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MotorcycleType.Type)
+        </dd>
+    </dl>
+
+    <form asp-action="DeleteMotorcycle" asp-controller="UserListings">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="UserDashboard">Back to List</a>
+    </form>
+</div>

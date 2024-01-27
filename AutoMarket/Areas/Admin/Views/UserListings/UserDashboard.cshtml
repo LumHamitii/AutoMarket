@@ -1,0 +1,72 @@
+﻿@model UserDashboardViewModel
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>User Dashboard</h2>
+
+<h3>My Listed Cars</h3>
+@if (Model.UserCars.Any())
+{
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Car Brand</th>
+                <th>Car Model</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var car in Model.UserCars)
+            {
+                <tr>
+                    <td>@car.Id</td>
+                    <td>@(car.CarBrand != null ? car.CarBrand.BrandName : "N/A")</td>
+                    <td>@(car.CarModel != null ? car.CarModel.ModelName : "N/A")</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@car.Id" class="btn btn-warning">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@car.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No cars listed.</p>
+}
+
+<h3>My Listed Motorcycles</h3>
+@if (Model.UserMotorcycles.Any())
+{
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Motorcycle Brand</th>
+                <th>Motorcycle Model</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var motorcycle in Model.UserMotorcycles)
+            {
+                <tr>
+                    <td>@motorcycle.Id</td>
+                    <td>@(motorcycle.MotorcycleBrand != null ? motorcycle.MotorcycleBrand.BrandName : "N/A")</td>
+                    <td>@(motorcycle.MotorcycleModel != null ? motorcycle.MotorcycleModel.ModelName : "N/A")</td>
+                    <td>
+                        <a asp-action="EditMotorcycle" asp-route-id="@motorcycle.Id" class="btn btn-warning">Edit</a>
+                        <a asp-action="DeleteMotorcycle" asp-route-id="@motorcycle.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No motorcycles listed.</p>
+}

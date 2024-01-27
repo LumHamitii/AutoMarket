@@ -36,7 +36,7 @@ namespace AutoMarket.Models
 
         public int MotorcycleFuelTypeId { get; set; }
 
-        public string UserId { get; set; }
+     
         public IdentityUser User { get; set; }
 
 
